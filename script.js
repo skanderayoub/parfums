@@ -18,7 +18,7 @@ const questions = [
         ]
     },
     {
-        question: "Quelles familles olfactives vous captivent ? (Plusieurs choix possibles)",
+        question: "Quelles familles olfactives allument votre flamme ? (Plusieurs choix possibles)",
         type: "multiple",
         multiple: true,
         options: [
@@ -30,7 +30,7 @@ const questions = [
         ]
     },
     {
-        question: "Dans quels moments portez-vous du parfum ? (Plusieurs choix possibles)",
+        question: "Dans quels moments votre parfum brille-t-il ? (Plusieurs choix possibles)",
         type: "multiple",
         multiple: true,
         options: [
@@ -51,7 +51,7 @@ const questions = [
         ]
     },
     {
-        question: "Quelle intensité de parfum recherchez-vous ?",
+        question: "Quelle intensité de parfum fait vibrer votre âme ?",
         type: "single",
         options: [
             { text: "Légère et discrète", value: "light", score: { fresh: 2, floral: 1 }, icon: "💨" },
@@ -60,7 +60,7 @@ const questions = [
         ]
     },
     {
-        question: "Quelles notes olfactives vous envoûtent ? (Plusieurs choix possibles)",
+        question: "Quelles notes olfactives enflamment vos sens ? (Plusieurs choix possibles)",
         type: "multiple",
         multiple: true,
         options: [
@@ -94,7 +94,7 @@ const questions = [
         ]
     },
     {
-        question: "Quelle importance accordez-vous à la longévité du parfum ? (1 à 5)",
+        question: "Quelle importance accordez-vous à la longévité de votre parfum ? (1 à 5)",
         type: "scale",
         options: [
             { text: "1 (Peu important)", value: 1, score: { fresh: 1 }, icon: "⏳" },
@@ -204,7 +204,7 @@ function showQuestion() {
     if (q.multiple) {
         q.options.forEach((option, index) => {
             const btn = document.createElement("button");
-            btn.className = `toggle-btn p-3 rounded-lg w-full text-left text-sm flex items-center space-x-2 ${answers[currentQuestion] && answers[currentQuestion].includes(option.value) ? "selected" : ""}`;
+            btn.className = `toggle-btn p-3 rounded-lg w-full text-left text-sm flex items-center space-x-2 font-lora ${answers[currentQuestion] && answers[currentQuestion].includes(option.value) ? "selected" : ""}`;
             btn.innerHTML = `<span class="text-lg">${option.icon}</span><span>${option.text}</span>`;
             btn.onclick = () => toggleOption(option.value, option.score);
             optionsElement.appendChild(btn);
@@ -212,7 +212,7 @@ function showQuestion() {
     } else {
         q.options.forEach((option, index) => {
             const btn = document.createElement("button");
-            btn.className = `option-btn bg-rose-100 text-indigo-800 p-3 rounded-lg w-full text-left text-sm flex items-center space-x-2 hover:bg-rose-200 ${q.type === "scale" ? "justify-between" : ""}`;
+            btn.className = `option-btn bg-amber-100 text-gray-800 p-3 rounded-lg w-full text-left text-sm flex items-center space-x-2 hover:bg-amber-200 font-lora ${q.type === "scale" ? "justify-between" : ""}`;
             btn.innerHTML = `<span class="text-lg">${option.icon}</span><span>${option.text}</span>`;
             btn.onclick = () => selectOption(option.value, option.score);
             optionsElement.appendChild(btn);
@@ -278,7 +278,7 @@ function getPerfumeRecommendations(profile, gender, ageRange, skinType, intensit
         .slice(0, 3)
         .map(perfume => ({
             name: `${perfume.brand} - ${perfume.name}`,
-            details: `Notes: ${perfume.notes.join(", ")}<br>Idéal pour: ${perfume.gender.join(", ")}, ${perfume.ageRange.join(", ")}`
+            details: `Notes: ${perfume.notes.join(", ")}<br>Idéal pour: ${perfume.gender.join(", ")}, ${perfume.ageRange.join(", ")}<br>Créez une bougie Candle Bar inspirée de ce parfum !`
         }));
 }
 
@@ -288,16 +288,16 @@ function showResults() {
 
     const { dominantProfile, gender, ageRange, skinType, intensity, contexts } = calculateProfile();
     const profileDescriptions = {
-        floral: "Votre profil floral évoque une élégance délicate, comme un jardin en fleurs sous le soleil printanier, parfait pour une touche romantique et féminine.",
-        woody: "Votre profil boisé respire la force et la chaleur, rappelant une forêt profonde et mystérieuse, idéal pour une présence affirmée.",
-        oriental: "Votre profil oriental est riche et captivant, comme une nuit étoilée dans un bazar exotique, parfait pour les âmes audacieuses.",
-        fresh: "Votre profil frais est vif et lumineux, évoquant une brise marine ou un citronnier en fleurs, idéal pour toutes les occasions.",
-        spicy: "Votre profil épicé est vibrant et audacieux, comme un marché aux épices sous un soleil ardent, parfait pour se démarquer."
+        floral: "Votre profil floral danse comme une flamme dans un jardin de roses, évoquant une douceur élégante et romantique, parfaite pour une bougie Candle Bar chaleureuse.",
+        woody: "Votre profil boisé brûle avec la force d'une forêt ancienne, alliant robustesse et mystère, idéal pour une bougie Candle Bar profonde et envoûtante.",
+        oriental: "Votre profil oriental scintille comme une chandelle dans un bazar exotique, avec des notes riches et sensuelles, parfait pour une bougie Candle Bar audacieuse.",
+        fresh: "Votre profil frais éclaire comme une brise marine, vif et lumineux, idéal pour une bougie Candle Bar légère et vivifiante.",
+        spicy: "Votre profil épicé pétille comme une flamme ardente, vibrant et audacieux, parfait pour une bougie Candle Bar qui capte l'attention."
     };
 
-    profileResult.textContent = `Votre signature olfactive est ${dominantProfile.charAt(0).toUpperCase() + dominantProfile.slice(1)}. ${profileDescriptions[dominantProfile]}`;
+    profileResult.textContent = `Votre signature Candle Bar est ${dominantProfile.charAt(0).toUpperCase() + dominantProfile.slice(1)}. ${profileDescriptions[dominantProfile]}`;
 
-    // Graphique radar avec couleurs olfactives
+    // Graphique radar avec couleurs Candle Bar
     new Chart(profileChart, {
         type: "radar",
         data: {
@@ -305,8 +305,8 @@ function showResults() {
             datasets: [{
                 label: "Votre Profil Olfactif",
                 data: Object.values(profileScores),
-                backgroundColor: "rgba(244, 114, 182, 0.2)", // Rose poudré
-                borderColor: "rgba(244, 114, 182, 1)",
+                backgroundColor: "rgba(212, 163, 115, 0.2)", // Doré clair
+                borderColor: "rgba(212, 163, 115, 1)", // Doré
                 borderWidth: 2
             }]
         },
@@ -335,7 +335,7 @@ function showResults() {
         const li = document.createElement("li");
         li.className = "perfume-item p-2 rounded-lg";
         li.innerHTML = `
-      <div class="font-semibold">${perfume.name}</div>
+      <div class="font-semibold font-lora">${perfume.name}</div>
       <div class="perfume-details text-xs text-gray-600">${perfume.details}</div>
     `;
         li.onclick = () => {

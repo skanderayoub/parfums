@@ -10,8 +10,8 @@
 }
 
 @keyframes mist {
-  0% { transform: translateY(0); opacity: 0.3; }
-  100% { transform: translateY(-20px); opacity: 0; }
+  0% { transform: translateY(0); opacity: 0.4; }
+  100% { transform: translateY(-30px); opacity: 0; }
 }
 
 .animate-fade-in {
@@ -29,22 +29,25 @@
 .option-btn, .toggle-btn {
   transition: all 0.3s ease;
   touch-action: manipulation;
+  border: 2px solid #d4a373; /* Doré pour Candle Bar */
+  border-radius: 12px;
+  background-color: #fef3e6; /* Beige clair */
 }
 
 .toggle-btn {
-  border: 2px solid #c7d2fe;
-  background-color: #f1f5f9;
+  background-color: #fef3e6;
 }
 
 .toggle-btn.selected {
-  background-color: #c7d2fe;
-  border-color: #4f46e5;
-  color: #1e3a8a;
+  background-color: #f4c7b6; /* Rose poudré */
+  border-color: #b45309; /* Ambre profond */
+  color: #1f2937; /* Gris anthracite */
 }
 
 .toggle-btn:hover, .option-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(rgba(212, 163, 115, 0.2), rgba(212, 163, 115, 0.2)); /* Effet cire fondue */
 }
 
 #profileChart {
@@ -57,7 +60,7 @@
 }
 
 .perfume-item:hover {
-  background-color: #f1f5f9;
+  background-color: #fef3e6;
 }
 
 .perfume-details {
@@ -73,11 +76,19 @@
 
 .mist-particle {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.3);
+  width: 12px;
+  height: 12px;
+  background: rgba(212, 163, 115, 0.4); /* Doré léger */
   border-radius: 50%;
-  animation: mist 2s infinite;
+  animation: mist 2.5s infinite;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-lora {
+  font-family: 'Lora', serif;
 }
 
 @media (max-width: 640px) {
