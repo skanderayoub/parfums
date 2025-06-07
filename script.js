@@ -3,107 +3,173 @@ const questions = [
         question: "Quel est votre sexe ?",
         type: "single",
         options: [
-            { text: "Féminin", value: "female", score: {} },
-            { text: "Masculin", value: "male", score: {} },
-            { text: "Unisexe/Non-binaire", value: "unisex", score: {} }
+            { text: "Féminin", value: "female", score: {}, icon: "" },
+            { text: "Masculin", value: "male", score: {}, icon: "" },
+            { text: "Unisexe/Non-binaire", value: "unisex", score: {}, icon: "" }
         ]
     },
     {
         question: "Quelle est votre tranche d'âge ?",
         type: "single",
         options: [
-            { text: "18-23 ans", value: "18-23", score: {} },
-            { text: "23-40 ans", value: "23-40", score: {} },
-            { text: "40 ans et plus", value: "40+", score: {} }
+            { text: "18-23 ans", value: "18-23", score: {}, icon: "" },
+            { text: "23-40 ans", value: "23-40", score: {}, icon: "" },
+            { text: "40 ans et plus", value: "40+", score: {}, icon: "" }
         ]
     },
     {
-        question: "Quelles familles olfactives vous attirent le plus ? (Plusieurs choix possibles)",
+        question: "Quelles familles olfactives vous captivent ? (Plusieurs choix possibles)",
         type: "multiple",
         multiple: true,
         options: [
-            { text: "Florale (rose, jasmin, tubéreuse)", value: "floral", score: { floral: 3 } },
-            { text: "Boisée (cèdre, santal, oud)", value: "woody", score: { woody: 3 } },
-            { text: "Orientale (vanille, ambre, musc)", value: "oriental", score: { oriental: 3 } },
-            { text: "Fraîche (bergamote, citron, notes marines)", value: "fresh", score: { fresh: 3 } },
-            { text: "Épicée (poivre, safran, cardamome)", value: "spicy", score: { spicy: 3 } }
+            { text: "Florale (rose, jasmin, tubéreuse)", value: "floral", score: { floral: 3 }, icon: "🌹" },
+            { text: "Boisée (cèdre, santal, oud)", value: "woody", score: { woody: 3 }, icon: "🌳" },
+            { text: "Orientale (vanille, ambre, musc)", value: "oriental", score: { oriental: 3 }, icon: "🪔" },
+            { text: "Fraîche (bergamote, citron, notes marines)", value: "fresh", score: { fresh: 3 }, icon: "🍋" },
+            { text: "Épicée (poivre, safran, cardamome)", value: "spicy", score: { spicy: 3 }, icon: "🌶️" }
         ]
     },
     {
-        question: "Dans quels contextes portez-vous du parfum ? (Plusieurs choix possibles)",
+        question: "Dans quels moments portez-vous du parfum ? (Plusieurs choix possibles)",
         type: "multiple",
         multiple: true,
         options: [
-            { text: "Au quotidien (travail, casual)", value: "daily", score: { fresh: 2, floral: 1 } },
-            { text: "Soirées ou occasions spéciales", value: "evening", score: { oriental: 2, woody: 1 } },
-            { text: "En fonction des saisons", value: "seasonal", score: { fresh: 1, floral: 1 } },
-            { text: "Pour exprimer ma personnalité", value: "personality", score: { oriental: 1, floral: 1, woody: 1 } }
+            { text: "Au quotidien (travail, casual)", value: "daily", score: { fresh: 2, floral: 1 }, icon: "☀️" },
+            { text: "Soirées ou occasions spéciales", value: "evening", score: { oriental: 2, woody: 1 }, icon: "🌙" },
+            { text: "En fonction des saisons", value: "seasonal", score: { fresh: 1, floral: 1 }, icon: "🍂" },
+            { text: "Pour exprimer ma personnalité", value: "personality", score: { oriental: 1, floral: 1, woody: 1 }, icon: "✨" }
         ]
     },
     {
         question: "Quel est votre type de peau ?",
         type: "single",
         options: [
-            { text: "Grasse (parfums plus intenses)", value: "oily", score: { oriental: 2, spicy: 1 } },
-            { text: "Sèche (parfums moins persistants)", value: "dry", score: { floral: 2, fresh: 1 } },
-            { text: "Sensible (éviter certains ingrédients)", value: "sensitive", score: { fresh: 2, floral: 1 } },
-            { text: "Normale", value: "normal", score: { floral: 1, woody: 1, oriental: 1, fresh: 1 } }
+            { text: "Grasse (parfums plus intenses)", value: "oily", score: { oriental: 2, spicy: 1 }, icon: "💧" },
+            { text: "Sèche (parfums moins persistants)", value: "dry", score: { floral: 2, fresh: 1 }, icon: "🌵" },
+            { text: "Sensible (éviter certains ingrédients)", value: "sensitive", score: { fresh: 2, floral: 1 }, icon: "🍃" },
+            { text: "Normale", value: "normal", score: { floral: 1, woody: 1, oriental: 1, fresh: 1 }, icon: "⚖️" }
         ]
     },
     {
-        question: "Quelle intensité de parfum préférez-vous ?",
+        question: "Quelle intensité de parfum recherchez-vous ?",
         type: "single",
         options: [
-            { text: "Légère et discrète", value: "light", score: { fresh: 2, floral: 1 } },
-            { text: "Modérée, équilibrée", value: "moderate", score: { floral: 1, woody: 1 } },
-            { text: "Intense et audacieuse", value: "bold", score: { oriental: 2, woody: 1 } }
+            { text: "Légère et discrète", value: "light", score: { fresh: 2, floral: 1 }, icon: "💨" },
+            { text: "Modérée, équilibrée", value: "moderate", score: { floral: 1, woody: 1 }, icon: "🌬️" },
+            { text: "Intense et audacieuse", value: "bold", score: { oriental: 2, woody: 1 }, icon: "🔥" }
         ]
     },
     {
-        question: "Quelles notes olfactives vous séduisent ? (Plusieurs choix possibles)",
+        question: "Quelles notes olfactives vous envoûtent ? (Plusieurs choix possibles)",
         type: "multiple",
         multiple: true,
         options: [
-            { text: "Rose", value: "rose", score: { floral: 3 } },
-            { text: "Oud", value: "oud", score: { woody: 3 } },
-            { text: "Vanille", value: "vanilla", score: { oriental: 3 } },
-            { text: "Bergamote", value: "bergamot", score: { fresh: 3 } },
-            { text: "Safran", value: "saffron", score: { spicy: 3 } },
-            { text: "Fruits rouges", value: "red_berries", score: { floral: 2, fresh: 1 } }
+            { text: "Rose", value: "rose", score: { floral: 3 }, icon: "🌹" },
+            { text: "Oud", value: "oud", score: { woody: 3 }, icon: "🌲" },
+            { text: "Vanille", value: "vanilla", score: { oriental: 3 }, icon: "🍦" },
+            { text: "Bergamote", value: "bergamot", score: { fresh: 3 }, icon: "🍋" },
+            { text: "Safran", value: "saffron", score: { spicy: 3 }, icon: "🌶️" },
+            { text: "Fruits rouges", value: "red_berries", score: { floral: 2, fresh: 1 }, icon: "🍓" }
         ]
     },
     {
         question: "Comment décririez-vous votre personnalité ?",
         type: "single",
         options: [
-            { text: "Sophistiquée et élégante", value: "sophisticated", score: { floral: 2, oriental: 1 } },
-            { text: "Aventureuse et audacieuse", value: "adventurous", score: { woody: 2, spicy: 1 } },
-            { text: "Énergique et lumineuse", value: "energetic", score: { fresh: 2, floral: 1 } },
-            { text: "Romantique et douce", value: "romantic", score: { floral: 2, oriental: 1 } }
+            { text: "Sophistiquée et élégante", value: "sophisticated", score: { floral: 2, oriental: 1 }, icon: "💎" },
+            { text: "Aventureuse et audacieuse", value: "adventurous", score: { woody: 2, spicy: 1 }, icon: "🏞️" },
+            { text: "Énergique et lumineuse", value: "energetic", score: { fresh: 2, floral: 1 }, icon: "⚡" },
+            { text: "Romantique et douce", value: "romantic", score: { floral: 2, oriental: 1 }, icon: "💖" }
         ]
     },
     {
-        question: "Quelles saisons préférez-vous pour vos parfums ? (Plusieurs choix possibles)",
+        question: "Quelles saisons inspirent vos parfums ? (Plusieurs choix possibles)",
         type: "multiple",
         multiple: true,
         options: [
-            { text: "Printemps (frais, floral)", value: "spring", score: { floral: 2, fresh: 1 } },
-            { text: "Été (léger, citronné)", value: "summer", score: { fresh: 3 } },
-            { text: "Automne (boisé, chaleureux)", value: "fall", score: { woody: 2, oriental: 1 } },
-            { text: "Hiver (riche, épicé)", value: "winter", score: { oriental: 2, spicy: 1 } }
+            { text: "Printemps (frais, floral)", value: "spring", score: { floral: 2, fresh: 1 }, icon: "🌸" },
+            { text: "Été (léger, citronné)", value: "summer", score: { fresh: 3 }, icon: "☀️" },
+            { text: "Automne (boisé, chaleureux)", value: "fall", score: { woody: 2, oriental: 1 }, icon: "🍂" },
+            { text: "Hiver (riche, épicé)", value: "winter", score: { oriental: 2, spicy: 1 }, icon: "❄️" }
         ]
     },
     {
         question: "Quelle importance accordez-vous à la longévité du parfum ? (1 à 5)",
         type: "scale",
         options: [
-            { text: "1 (Peu important)", value: 1, score: { fresh: 1 } },
-            { text: "2", value: 2, score: { fresh: 1, floral: 1 } },
-            { text: "3", value: 3, score: { floral: 1, woody: 1 } },
-            { text: "4", value: 4, score: { woody: 1, oriental: 1 } },
-            { text: "5 (Très important)", value: 5, score: { oriental: 2, woody: 1 } }
+            { text: "1 (Peu important)", value: 1, score: { fresh: 1 }, icon: "⏳" },
+            { text: "2", value: 2, score: { fresh: 1, floral: 1 }, icon: "⏳" },
+            { text: "3", value: 3, score: { floral: 1, woody: 1 }, icon: "⏳" },
+            { text: "4", value: 4, score: { woody: 1, oriental: 1 }, icon: "⏳" },
+            { text: "5 (Très important)", value: 5, score: { oriental: 2, woody: 1 }, icon: "⏳" }
         ]
     }
+];
+
+// Base de données enrichie avec des parfums inspirés de Fragrantica
+const perfumeDatabase = [
+    { name: "Chanel Chance Eau Fraîche", brand: "Chanel", family: "fresh", notes: ["citron", "jasmin", "teck"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily", "seasonal"], gender: ["female", "unisex"], ageRange: ["18-23", "23-40"] },
+    { name: "Dior Miss Dior Eau de Parfum", brand: "Dior", family: "floral", notes: ["rose", "pivoine", "muguet"], skinType: ["normal", "dry"], intensity: "moderate", context: ["daily", "evening"], gender: ["female"], ageRange: ["18-23", "23-40"] },
+    { name: "Lancôme La Vie Est Belle", brand: "Lancôme", family: "floral", notes: ["iris", "vanille", "praline"], skinType: ["dry", "normal"], intensity: "moderate", context: ["evening", "personality"], gender: ["female"], ageRange: ["23-40", "40+"] },
+    { name: "Yves Saint Laurent Libre", brand: "Yves Saint Laurent", family: "floral", notes: ["lavande", "vanille", "fleur d'oranger"], skinType: ["normal", "sensitive"], intensity: "moderate", context: ["daily", "evening"], gender: ["female"], ageRange: ["23-40"] },
+    { name: "Maison Francis Kurkdjian Baccarat Rouge 540", brand: "Maison Francis Kurkdjian", family: "oriental", notes: ["safran", "ambre", "cèdre"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening", "personality"], gender: ["female", "unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Gucci Bloom", brand: "Gucci", family: "floral", notes: ["tubéreuse", "jasmin", "rangoon creeper"], skinType: ["dry", "normal"], intensity: "moderate", context: ["daily", "evening"], gender: ["female"], ageRange: ["18-23", "23-40"] },
+    { name: "Jo Malone Peony & Blush Suede", brand: "Jo Malone", family: "floral", notes: ["pivoine", "pomme", "suede"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily", "seasonal"], gender: ["female"], ageRange: ["18-23", "23-40"] },
+    { name: "Carolina Herrera Good Girl", brand: "Carolina Herrera", family: "oriental", notes: ["amande", "café", "tubéreuse"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["female"], ageRange: ["23-40"] },
+    { name: "Viktor & Rolf Flowerbomb", brand: "Viktor & Rolf", family: "floral", notes: ["rose", "freesia", "vanille"], skinType: ["dry", "normal"], intensity: "bold", context: ["evening"], gender: ["female"], ageRange: ["23-40", "40+"] },
+    { name: "Chloé Eau de Parfum", brand: "Chloé", family: "floral", notes: ["pivoine", "rose", "miel"], skinType: ["dry", "normal"], intensity: "moderate", context: ["daily", "evening"], gender: ["female"], ageRange: ["18-23", "23-40"] },
+    { name: "Creed Aventus", brand: "Creed", family: "spicy", notes: ["ananas", "poivre noir", "patchouli"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening", "personality"], gender: ["male"], ageRange: ["23-40", "40+"] },
+    { name: "Tom Ford Oud Wood", brand: "Tom Ford", family: "woody", notes: ["santal", "oud", "cardamome"], skinType: ["normal", "oily"], intensity: "bold", context: ["evening", "personality"], gender: ["male", "unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Hermès Terre d’Hermès", brand: "Hermès", family: "woody", notes: ["pamplemousse", "cèdre", "poivre"], skinType: ["normal", "oily"], intensity: "moderate", context: ["daily", "personality"], gender: ["male"], ageRange: ["23-40", "40+"] },
+    { name: "Chanel Bleu de Chanel", brand: "Chanel", family: "woody", notes: ["encens", "cèdre", "pamplemousse"], skinType: ["normal", "oily"], intensity: "moderate", context: ["daily", "personality"], gender: ["male"], ageRange: ["23-40"] },
+    { name: "Yves Saint Laurent La Nuit de l’Homme", brand: "Yves Saint Laurent", family: "spicy", notes: ["cardamome", "lavande", "cèdre"], skinType: ["normal", "oily"], intensity: "moderate", context: ["evening"], gender: ["male"], ageRange: ["23-40"] },
+    { name: "Dior Sauvage", brand: "Dior", family: "fresh", notes: ["bergamote", "poivre", "ambroxan"], skinType: ["normal", "oily"], intensity: "moderate", context: ["daily", "personality"], gender: ["male"], ageRange: ["18-23", "23-40"] },
+    { name: "Guerlain L’Homme Idéal", brand: "Guerlain", family: "woody", notes: ["amande", "cuir", "fève tonka"], skinType: ["normal", "oily"], intensity: "moderate", context: ["daily", "personality"], gender: ["male"], ageRange: ["23-40", "40+"] },
+    { name: "Byredo Rose Noir", brand: "Byredo", family: "floral", notes: ["rose damascena", "musc", "mousse"], skinType: ["normal", "sensitive"], intensity: "moderate", context: ["evening"], gender: ["unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Creed Silver Mountain Water", brand: "Creed", family: "fresh", notes: ["bergamote", "thé vert", "musc"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily", "seasonal"], gender: ["unisex"], ageRange: ["18-23", "23-40"] },
+    { name: "Maison Margiela Replica Jazz Club", brand: "Maison Margiela", family: "woody", notes: ["rhum", "tabac", "vanille"], skinType: ["normal", "oily"], intensity: "moderate", context: ["evening", "personality"], gender: ["unisex"], ageRange: ["23-40"] },
+    { name: "Jo Malone Basil & Neroli", brand: "Jo Malone", family: "fresh", notes: ["basilic", "néroli", "musc blanc"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily", "seasonal"], gender: ["unisex"], ageRange: ["18-23", "23-40"] },
+    { name: "Tom Ford Black Orchid", brand: "Tom Ford", family: "oriental", notes: ["truffe", "chocolat noir", "patchouli"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["female", "unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Byredo Black Saffron", brand: "Byredo", family: "oriental", notes: ["safran", "cuir", "violette"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening", "personality"], gender: ["unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Amouage Reflection Man", brand: "Amouage", family: "floral", notes: ["jasmin", "musc", "santal"], skinType: ["normal", "sensitive"], intensity: "moderate", context: ["daily", "evening"], gender: ["male", "unisex"], ageRange: ["23-40"] },
+    { name: "Guerlain Shalimar", brand: "Guerlain", family: "oriental", notes: ["vanille", "iris", "encens"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["female"], ageRange: ["40+"] },
+    { name: "Jo Malone Oud & Bergamot", brand: "Jo Malone", family: "oriental", notes: ["bergamote", "oud", "cèdre"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Diptyque Philosykos", brand: "Diptyque", family: "fresh", notes: ["figue", "coco", "cèdre"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily", "seasonal"], gender: ["unisex"], ageRange: ["18-23", "23-40"] },
+    { name: "Armani Sì", brand: "Giorgio Armani", family: "floral", notes: ["cassis", "rose", "vanille"], skinType: ["dry", "normal"], intensity: "moderate", context: ["daily", "evening"], gender: ["female"], ageRange: ["23-40"] },
+    { name: "BVLGARI Bois d’Argent", brand: "BVLGARI", family: "woody", notes: ["iris", "musc", "cèdre"], skinType: ["normal", "oily"], intensity: "moderate", context: ["daily", "personality"], gender: ["unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Chanel N°5", brand: "Chanel", family: "floral", notes: ["rose", "jasmin", "vanille"], skinType: ["normal", "dry"], intensity: "bold", context: ["evening"], gender: ["female"], ageRange: ["40+"] },
+    { name: "Guerlain Mon Guerlain", brand: "Guerlain", family: "oriental", notes: ["lavande", "vanille", "santal"], skinType: ["oily", "normal"], intensity: "moderate", context: ["evening"], gender: ["female"], ageRange: ["23-40", "40+"] },
+    { name: "Tom Ford Tobacco Vanille", brand: "Tom Ford", family: "oriental", notes: ["tabac", "vanille", "épices"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Jo Malone Lime Basil & Mandarin", brand: "Jo Malone", family: "fresh", notes: ["citron vert", "basilic", "mandarine"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily", "seasonal"], gender: ["unisex"], ageRange: ["18-23", "23-40"] },
+    { name: "Dior J’Adore", brand: "Dior", family: "floral", notes: ["jasmin", "pêche", "musc"], skinType: ["normal", "dry"], intensity: "moderate", context: ["daily", "evening"], gender: ["female"], ageRange: ["23-40"] },
+    { name: "Byredo Gypsy Water", brand: "Byredo", family: "fresh", notes: ["bergamote", "genièvre", "vanille"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily", "seasonal"], gender: ["unisex"], ageRange: ["18-23", "23-40"] },
+    { name: "Amouage Lyric Man", brand: "Amouage", family: "floral", notes: ["rose", "safran", "musc"], skinType: ["normal", "sensitive"], intensity: "bold", context: ["evening"], gender: ["male", "unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Creed Bois du Portugal", brand: "Creed", family: "woody", notes: ["santal", "vétiver", "lavande"], skinType: ["normal", "oily"], intensity: "moderate", context: ["daily", "personality"], gender: ["male"], ageRange: ["23-40", "40+"] },
+    { name: "Maison Margiela Replica Coffee Break", brand: "Maison Margiela", family: "oriental", notes: ["café", "lavande", "menthe"], skinType: ["oily", "normal"], intensity: "moderate", context: ["daily", "evening"], gender: ["unisex"], ageRange: ["23-40"] },
+    { name: "Yves Saint Laurent Black Opium", brand: "Yves Saint Laurent", family: "oriental", notes: ["café", "vanille", "fleur d'oranger"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["female"], ageRange: ["23-40"] },
+    { name: "Jo Malone Blackberry & Bay", brand: "Jo Malone", family: "fresh", notes: ["mûre", "laurier", "cèdre"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily", "seasonal"], gender: ["unisex"], ageRange: ["18-23", "23-40"] },
+    { name: "Diptyque Oud Palao", brand: "Diptyque", family: "oriental", notes: ["oud", "vanille", "rose"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Lancôme Poême", brand: "Lancôme", family: "floral", notes: ["fleur d'oranger", "vanille", "mimosa"], skinType: ["dry", "normal"], intensity: "bold", context: ["evening"], gender: ["female"], ageRange: ["40+"] },
+    { name: "Jo Malone English Pear & Freesia", brand: "Jo Malone", family: "floral", notes: ["poire", "freesia", "patchouli"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily", "seasonal"], gender: ["female", "unisex"], ageRange: ["18-23", "23-40"] },
+    { name: "Tom Ford Noir Extreme", brand: "Tom Ford", family: "oriental", notes: ["cardamome", "noix de muscade", "kulfi"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["male", "unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Marc Jacobs Daisy", brand: "Marc Jacobs", family: "floral", notes: ["violette", "jasmin", "fraise"], skinType: ["normal", "dry"], intensity: "light", context: ["daily", "seasonal"], gender: ["female"], ageRange: ["18-23", "23-40"] },
+    { name: "Burberry Brit Sheer", brand: "Burberry", family: "floral", notes: ["litchi", "pivoine", "yuzu"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily"], gender: ["female"], ageRange: ["18-23"] },
+    { name: "Bvlgari Omnia Crystalline", brand: "Bvlgari", family: "floral", notes: ["bambou", "nashi", "lotus"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily"], gender: ["female"], ageRange: ["18-23", "23-40"] },
+    { name: "Coach Poppy EDP", brand: "Coach", family: "floral", notes: ["cassis", "freesia", "praline"], skinType: ["normal", "dry"], intensity: "moderate", context: ["daily", "evening"], gender: ["female"], ageRange: ["18-23", "23-40"] },
+    { name: "Versace Bright Crystal Absolu", brand: "Versace", family: "floral", notes: ["yuzu", "pivoine", "framboise"], skinType: ["normal", "dry"], intensity: "moderate", context: ["daily", "evening"], gender: ["female"], ageRange: ["18-23", "23-40"] },
+    { name: "Judith Leiber Night", brand: "Judith Leiber", family: "oriental", notes: ["cannelle", "jasmin", "ambre"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["female"], ageRange: ["23-40", "40+"] },
+    { name: "Salvatore Ferragamo F for Fascinating Night", brand: "Salvatore Ferragamo", family: "floral", notes: ["jasmin", "rose", "patchouli"], skinType: ["normal", "dry"], intensity: "moderate", context: ["evening"], gender: ["female"], ageRange: ["23-40"] },
+    { name: "Phlur Missing Person", brand: "Phlur", family: "fresh", notes: ["musc", "jasmin", "bergamote"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily"], gender: ["unisex"], ageRange: ["18-23", "23-40"] },
+    { name: "Byredo Rouge Chaotique", brand: "Byredo", family: "spicy", notes: ["prune", "patchouli", "praline"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Louis Vuitton Pacific Chill", brand: "Louis Vuitton", family: "fresh", notes: ["cassis", "basilic", "citron"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily", "seasonal"], gender: ["unisex"], ageRange: ["18-23", "23-40"] },
+    { name: "Narciso Rodriguez For Her", brand: "Narciso Rodriguez", family: "floral", notes: ["fleur de miel", "ambre", "bois"], skinType: ["normal", "dry"], intensity: "moderate", context: ["daily", "evening"], gender: ["female"], ageRange: ["23-40", "40+"] },
+    { name: "Kilian Angel’s Share", brand: "Kilian", family: "oriental", notes: ["cognac", "fève tonka", "chêne"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening"], gender: ["unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Le Labo Another 13", brand: "Le Labo", family: "woody", notes: ["ambroxan", "jasmin", "mousse"], skinType: ["normal", "oily"], intensity: "moderate", context: ["daily", "evening"], gender: ["unisex"], ageRange: ["23-40"] },
+    { name: "Calvin Klein Eternity", brand: "Calvin Klein", family: "floral", notes: ["freesia", "lys", "santal"], skinType: ["normal"], intensity: "moderate", context: ["daily", "evening"], gender: ["female"], ageRange: ["23-40", "40+"] },
+    { name: "Elie Saab Girl of Now", brand: "Elie Saab", family: "floral", notes: ["amande", "fleur d'oranger", "patchouli"], skinType: ["normal", "dry"], intensity: "moderate", context: ["evening"], gender: ["female"], ageRange: ["18-23", "23-40", "40+"] },
+    { name: "Initio Parfums Oud for Greatness", brand: "Initio Parfums", family: "woody", notes: ["oud", "safran", "lavande"], skinType: ["oily", "normal"], intensity: "bold", context: ["evening", "personality"], gender: ["male", "unisex"], ageRange: ["23-40", "40+"] },
+    { name: "Acca Kappa White Moss", brand: "Acca Kappa", family: "fresh", notes: ["lavande", "genièvre", "musc"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily"], gender: ["male"], ageRange: ["18-23", "23-40"] },
+    { name: "Nicolai Parfumeur L’Eau Mixte", brand: "Nicolai Parfumeur", family: "fresh", notes: ["pamplemousse", "vétiver", "menthe"], skinType: ["normal", "sensitive"], intensity: "light", context: ["daily"], gender: ["male"], ageRange: ["18-23", "23-40"] }
 ];
 
 let currentQuestion = 0;
@@ -137,26 +203,17 @@ function showQuestion() {
     optionsElement.innerHTML = "";
     if (q.multiple) {
         q.options.forEach((option, index) => {
-            const div = document.createElement("div");
-            div.className = "flex items-center space-x-2";
-            const checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.id = `option-${index}`;
-            checkbox.className = "option-checkbox h-5 w-5 text-indigo-600";
-            checkbox.value = option.value;
-            const label = document.createElement("label");
-            label.htmlFor = `option-${index}`;
-            label.className = "option-label bg-indigo-100 text-indigo-800 p-3 rounded-lg w-full text-sm";
-            label.textContent = option.text;
-            div.appendChild(checkbox);
-            div.appendChild(label);
-            optionsElement.appendChild(div);
+            const btn = document.createElement("button");
+            btn.className = `toggle-btn p-3 rounded-lg w-full text-left text-sm flex items-center space-x-2 ${answers[currentQuestion] && answers[currentQuestion].includes(option.value) ? "selected" : ""}`;
+            btn.innerHTML = `<span class="text-lg">${option.icon}</span><span>${option.text}</span>`;
+            btn.onclick = () => toggleOption(option.value, option.score);
+            optionsElement.appendChild(btn);
         });
     } else {
         q.options.forEach((option, index) => {
             const btn = document.createElement("button");
-            btn.className = `option-btn bg-indigo-100 text-indigo-800 p-3 rounded-lg w-full text-left hover:bg-indigo-200 text-sm ${q.type === "scale" ? "flex justify-between items-center" : ""}`;
-            btn.textContent = option.text;
+            btn.className = `option-btn bg-rose-100 text-indigo-800 p-3 rounded-lg w-full text-left text-sm flex items-center space-x-2 hover:bg-rose-200 ${q.type === "scale" ? "justify-between" : ""}`;
+            btn.innerHTML = `<span class="text-lg">${option.icon}</span><span>${option.text}</span>`;
             btn.onclick = () => selectOption(option.value, option.score);
             optionsElement.appendChild(btn);
         });
@@ -180,18 +237,21 @@ function selectOption(value, score) {
     }
 }
 
-function selectMultipleOptions() {
-    const checkboxes = document.querySelectorAll(".option-checkbox:checked");
-    if (checkboxes.length === 0) return false;
-    answers[currentQuestion] = [];
-    checkboxes.forEach(checkbox => {
-        const option = questions[currentQuestion].options.find(opt => opt.value === checkbox.value);
-        answers[currentQuestion].push(option.value);
-        Object.keys(option.score).forEach(key => {
-            profileScores[key] += option.score[key] / checkboxes.length;
+function toggleOption(value, score) {
+    if (!answers[currentQuestion]) answers[currentQuestion] = [];
+    const index = answers[currentQuestion].indexOf(value);
+    if (index === -1) {
+        answers[currentQuestion].push(value);
+        Object.keys(score).forEach(key => {
+            profileScores[key] += score[key] / (answers[currentQuestion].length || 1);
         });
-    });
-    return true;
+    } else {
+        answers[currentQuestion].splice(index, 1);
+        Object.keys(score).forEach(key => {
+            profileScores[key] -= score[key] / (answers[currentQuestion].length + 1 || 1);
+        });
+    }
+    showQuestion();
 }
 
 function calculateProfile() {
@@ -205,36 +265,39 @@ function calculateProfile() {
     return { dominantProfile, gender, ageRange, skinType, intensity, contexts };
 }
 
-async function getPerfumeRecommendations(profile, gender, ageRange) {
-    try {
-        const response = await fetch(`http://localhost:5000/api/perfumes/filter?profile=${profile}&gender=${gender}&age=${ageRange}`);
-        const perfumes = await response.json();
-        return perfumes.map(perfume => ({
+function getPerfumeRecommendations(profile, gender, ageRange, skinType, intensity, contexts) {
+    return perfumeDatabase
+        .filter(perfume =>
+            perfume.family === profile &&
+            perfume.gender.includes(gender) &&
+            perfume.ageRange.includes(ageRange) &&
+            perfume.skinType.includes(skinType) &&
+            perfume.intensity === intensity &&
+            contexts.some(ctx => perfume.context.includes(ctx))
+        )
+        .slice(0, 3)
+        .map(perfume => ({
             name: `${perfume.brand} - ${perfume.name}`,
-            details: `Notes: ${perfume.notes.join(", ")}<br>Idéal pour: ${perfume.gender.join(", ")}, ${perfume.age_range.join(", ")}`
+            details: `Notes: ${perfume.notes.join(", ")}<br>Idéal pour: ${perfume.gender.join(", ")}, ${perfume.ageRange.join(", ")}`
         }));
-    } catch (error) {
-        console.error("Erreur lors de la récupération des parfums:", error);
-        return [];
-    }
 }
 
 function showResults() {
     quizSection.classList.add("hidden");
     resultsSection.classList.remove("hidden");
 
-    const { dominantProfile, gender, ageRange } = calculateProfile();
+    const { dominantProfile, gender, ageRange, skinType, intensity, contexts } = calculateProfile();
     const profileDescriptions = {
-        floral: "Votre profil olfactif est floral, marqué par une élégance douce et romantique, évoquant des jardins luxuriants et des pétales délicats, parfait pour une touche féminine ou sophistiquée.",
-        woody: "Votre profil boisé reflète une connexion profonde avec la nature, alliant chaleur, robustesse et une touche d'aventure, idéal pour une présence affirmée.",
-        oriental: "Votre profil oriental est riche et envoûtant, avec des notes sensuelles et mystérieuses qui captivent l'entourage, parfait pour les soirées.",
-        fresh: "Votre profil frais est lumineux et énergique, idéal pour une sensation de légèreté et de vitalité au quotidien, adapté à tous les âges.",
-        spicy: "Votre profil épicé est audacieux et vibrant, avec des notes qui ne passent pas inaperçues et affirment votre présence, idéal pour les personnalités fortes."
+        floral: "Votre profil floral évoque une élégance délicate, comme un jardin en fleurs sous le soleil printanier, parfait pour une touche romantique et féminine.",
+        woody: "Votre profil boisé respire la force et la chaleur, rappelant une forêt profonde et mystérieuse, idéal pour une présence affirmée.",
+        oriental: "Votre profil oriental est riche et captivant, comme une nuit étoilée dans un bazar exotique, parfait pour les âmes audacieuses.",
+        fresh: "Votre profil frais est vif et lumineux, évoquant une brise marine ou un citronnier en fleurs, idéal pour toutes les occasions.",
+        spicy: "Votre profil épicé est vibrant et audacieux, comme un marché aux épices sous un soleil ardent, parfait pour se démarquer."
     };
 
-    profileResult.textContent = `Votre profil dominant est ${dominantProfile.charAt(0).toUpperCase() + dominantProfile.slice(1)}. ${profileDescriptions[dominantProfile]}`;
+    profileResult.textContent = `Votre signature olfactive est ${dominantProfile.charAt(0).toUpperCase() + dominantProfile.slice(1)}. ${profileDescriptions[dominantProfile]}`;
 
-    // Graphique radar
+    // Graphique radar avec couleurs olfactives
     new Chart(profileChart, {
         type: "radar",
         data: {
@@ -242,8 +305,8 @@ function showResults() {
             datasets: [{
                 label: "Votre Profil Olfactif",
                 data: Object.values(profileScores),
-                backgroundColor: "rgba(79, 70, 229, 0.2)",
-                borderColor: "rgba(79, 70, 229, 1)",
+                backgroundColor: "rgba(244, 114, 182, 0.2)", // Rose poudré
+                borderColor: "rgba(244, 114, 182, 1)",
                 borderWidth: 2
             }]
         },
@@ -265,21 +328,20 @@ function showResults() {
         }
     });
 
-    // Récupérer et afficher les recommandations en temps réel
-    getPerfumeRecommendations(dominantProfile, gender, ageRange).then(recommendations => {
-        perfumeList.innerHTML = "";
-        recommendations.forEach((perfume, index) => {
-            const li = document.createElement("li");
-            li.className = "perfume-item p-2 rounded-lg";
-            li.innerHTML = `
-        <div class="font-semibold">${perfume.name}</div>
-        <div class="perfume-details text-xs text-gray-600">${perfume.details}</div>
-      `;
-            li.onclick = () => {
-                li.classList.toggle("active");
-            };
-            perfumeList.appendChild(li);
-        });
+    // Recommandations avec affichage déroulant
+    const recommendations = getPerfumeRecommendations(dominantProfile, gender, ageRange, skinType, intensity, contexts);
+    perfumeList.innerHTML = "";
+    recommendations.forEach((perfume, index) => {
+        const li = document.createElement("li");
+        li.className = "perfume-item p-2 rounded-lg";
+        li.innerHTML = `
+      <div class="font-semibold">${perfume.name}</div>
+      <div class="perfume-details text-xs text-gray-600">${perfume.details}</div>
+    `;
+        li.onclick = () => {
+            li.classList.toggle("active");
+        };
+        perfumeList.appendChild(li);
     });
 }
 
@@ -290,7 +352,7 @@ function prevQuestion() {
             prevAnswers.forEach(value => {
                 const option = questions[currentQuestion].options.find(opt => opt.value === value);
                 Object.keys(option.score).forEach(key => {
-                    profileScores[key] -= option.score[key] / prevAnswers.length;
+                    profileScores[key] -= option.score[key] / (prevAnswers.length || 1);
                 });
             });
         } else {
@@ -309,7 +371,7 @@ function prevQuestion() {
 startQuizBtn.onclick = startQuiz;
 nextBtn.onclick = () => {
     if (questions[currentQuestion].multiple) {
-        if (selectMultipleOptions()) {
+        if (answers[currentQuestion] && answers[currentQuestion].length > 0) {
             if (currentQuestion < questions.length - 1) {
                 currentQuestion++;
                 showQuestion();
