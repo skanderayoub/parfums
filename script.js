@@ -1,9 +1,9 @@
 // Products Data
 const productsData = [
-    { name: "Bougie Simple", image: "assets/bougie_simple.jpg", price: "19,90€", description: "Une bougie élégante pour une ambiance chaleureuse." },
-    { name: "Bougie 390g", image: "assets/bougie_390g.jpg", price: "39,90€", description: "✨ L'élégance intemporelle, notre bougie parfumée 390g en céramique noir mat, une création exquise de Candle Bar. 🖤🕯️" },
-    { name: "Diffuseur Noir Mat 125ml", image: "assets/DiffuseurNoirMat125ml.jpg", price: "39,90€", description: "Transformez votre espace avec notre diffuseur élégant. Les tiges en rotin dispersent délicatement le parfum." },
-    { name: "Diffuseur Voiture", image: "assets/DiffuseurVoiture.jpg", price: "14,90€", description: "Choisissez parmi nos senteurs enchanteresses pour vos trajets." }
+    { name: "Bougie Simple", image: "assets/bougie_simple.jpg", price: "65,70 TND", description: "Une bougie élégante pour une ambiance chaleureuse." },
+    { name: "Bougie 390g", image: "assets/bougie_390g.jpg", price: "131,70 TND", description: "✨ L'élégance intemporelle, notre bougie parfumée 390g en céramique noir mat, une création exquise de Candle Bar. 🖤🕯️" },
+    { name: "Diffuseur Noir Mat 125ml", image: "assets/DiffuseurNoirMat125ml.jpg", price: "131,70 TND", description: "Transformez votre espace avec notre diffuseur élégant. Les tiges en rotin dispersent délicatement le parfum." },
+    { name: "Diffuseur Voiture", image: "assets/DiffuseurVoiture.jpg", price: "49,20 TND", description: "Choisissez parmi nos senteurs enchanteresses pour vos trajets." }
 ];
 
 // Quiz Data (abbreviated for brevity, full version as before)
@@ -12,12 +12,96 @@ const questions = [
         question: "Quel est votre sexe ?",
         type: "single",
         options: [
-            { text: "Féminin", value: "female", score: {}, icon: "🌸" },
-            { text: "Masculin", value: "male", score: {}, icon: "🌲" },
-            { text: "Unisexe/Non-binaire", value: "unisex", score: {}, icon: "🕯️" }
+            { text: "Féminin", value: "female", score: {}, icon: "" },
+            { text: "Masculin", value: "male", score: {}, icon: "" },
+            { text: "Unisexe/Non-binaire", value: "unisex", score: {}, icon: "" }
         ]
     },
-    // ... (other questions remain the same)
+    {
+        question: "Quelle est votre tranche d'âge ?",
+        type: "single",
+        options: [
+            { text: "18-23 ans", value: "18-23", score: {}, icon: "" },
+            { text: "23-40 ans", value: "23-40", score: {}, icon: "" },
+            { text: "40 ans et plus", value: "40+", score: {}, icon: "" }
+        ]
+    },
+    {
+        question: "Quelles familles olfactives allument votre flamme ? (Plusieurs choix possibles)",
+        type: "multiple",
+        multiple: true,
+        options: [
+            { text: "Florale (rose, jasmin, tubéreuse)", value: "floral", score: { floral: 3 }, icon: "🌹" },
+            { text: "Boisée (cèdre, santal, oud)", value: "woody", score: { woody: 3 }, icon: "🌳" },
+            { text: "Orientale (vanille, ambre, musc)", value: "oriental", score: { oriental: 3 }, icon: "🪔" },
+            { text: "Fraîche (bergamote, citron, notes marines)", value: "fresh", score: { fresh: 3 }, icon: "🍋" },
+            { text: "Épicée (poivre, safran, cardamome)", value: "spicy", score: { spicy: 3 }, icon: "🌶️" }
+        ]
+    },
+    {
+        question: "Dans quels moments votre parfum brille-t-il ? (Plusieurs choix possibles)",
+        type: "multiple",
+        multiple: true,
+        options: [
+            { text: "Au quotidien (travail, casual)", value: "daily", score: { fresh: 2, floral: 1 }, icon: "☀️" },
+            { text: "Soirées ou occasions spéciales", value: "evening", score: { oriental: 2, woody: 1 }, icon: "🌙" },
+            { text: "En fonction des saisons", value: "seasonal", score: { fresh: 1, floral: 1 }, icon: "🍂" },
+            { text: "Pour exprimer ma personnalité", value: "personality", score: { oriental: 1, floral: 1, woody: 1 }, icon: "✨" }
+        ]
+    },
+    {
+        question: "Quel est votre type de peau ?",
+        type: "single",
+        options: [
+            { text: "Grasse (parfums plus intenses)", value: "oily", score: { oriental: 2, spicy: 1 }, icon: "💧" },
+            { text: "Sèche (parfums moins persistants)", value: "dry", score: { floral: 2, fresh: 1 }, icon: "🌵" },
+            { text: "Sensible (éviter certains ingrédients)", value: "sensitive", score: { fresh: 2, floral: 1 }, icon: "🍃" },
+            { text: "Normale", value: "normal", score: { floral: 1, woody: 1, oriental: 1, fresh: 1 }, icon: "⚖️" }
+        ]
+    },
+    {
+        question: "Quelle intensité de parfum fait vibrer votre âme ?",
+        type: "single",
+        options: [
+            { text: "Légère et discrète", value: "light", score: { fresh: 2, floral: 1 }, icon: "💨" },
+            { text: "Modérée, équilibrée", value: "moderate", score: { floral: 1, woody: 1 }, icon: "🌬️" },
+            { text: "Intense et audacieuse", value: "bold", score: { oriental: 2, woody: 1 }, icon: "🔥" }
+        ]
+    },
+    {
+        question: "Quelles notes olfactives enflamment vos sens ? (Plusieurs choix possibles)",
+        type: "multiple",
+        multiple: true,
+        options: [
+            { text: "Rose", value: "rose", score: { floral: 3 }, icon: "🌹" },
+            { text: "Oud", value: "oud", score: { woody: 3 }, icon: "🌲" },
+            { text: "Vanille", value: "vanilla", score: { oriental: 3 }, icon: "🍦" },
+            { text: "Bergamote", value: "bergamot", score: { fresh: 3 }, icon: "🍋" },
+            { text: "Safran", value: "saffron", score: { spicy: 3 }, icon: "🌶️" },
+            { text: "Fruits rouges", value: "red_berries", score: { floral: 2, fresh: 1 }, icon: "🍓" }
+        ]
+    },
+    {
+        question: "Comment décririez-vous votre personnalité ?",
+        type: "single",
+        options: [
+            { text: "Sophistiquée et élégante", value: "sophisticated", score: { floral: 2, oriental: 1 }, icon: "💎" },
+            { text: "Aventureuse et audacieuse", value: "adventurous", score: { woody: 2, spicy: 1 }, icon: "🏞️" },
+            { text: "Énergique et lumineuse", value: "energetic", score: { fresh: 2, floral: 1 }, icon: "⚡" },
+            { text: "Romantique et douce", value: "romantic", score: { floral: 2, oriental: 1 }, icon: "💖" }
+        ]
+    },
+    {
+        question: "Quelles saisons inspirent vos parfums ? (Plusieurs choix possibles)",
+        type: "multiple",
+        multiple: true,
+        options: [
+            { text: "Printemps (frais, floral)", value: "spring", score: { floral: 2, fresh: 1 }, icon: "🌸" },
+            { text: "Été (léger, citronné)", value: "summer", score: { fresh: 3 }, icon: "☀️" },
+            { text: "Automne (boisé, chaleureux)", value: "fall", score: { woody: 2, oriental: 1 }, icon: "🍂" },
+            { text: "Hiver (riche, épicé)", value: "winter", score: { oriental: 2, spicy: 1 }, icon: "❄️" }
+        ]
+    },
     {
         question: "Quelle importance accordez-vous à la longévité de votre parfum ? (1 à 5)",
         type: "scale",
@@ -73,8 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = document.createElement("div");
         card.className = "product-card animate-fade-in";
         card.innerHTML = `
-      <img src="${product.image}" alt="${product.name}" class="w-full h-32 object-contain cursor-pointer">
-      <h3 class="text-lg font-semibold mt-2 text-center">${product.name}</h3>
+      <div class="aspect-w-3 aspect-h-2">
+        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain cursor-pointer">
+      </div>
+      <h3 class="text-lg font-semibold mt-1 text-center">${product.name}</h3>
       <div class="product-info text-sm">
         <p class="font-bold">${product.price}</p>
         <p>${product.description}</p>
