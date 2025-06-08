@@ -1,86 +1,76 @@
 /* Custom animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes mist {
-  0% { transform: translateY(0); opacity: 0.4; }
-  100% { transform: translateY(-30px); opacity: 0; }
+@keyframes slideUp {
+  from { max-height: 0; opacity: 0; }
+  to { max-height: 100px; opacity: 1; }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.4s ease-out forwards;
 }
 
-.animate-slide-in {
-  animation: slideIn 0.5s ease-out forwards;
+.product-info {
+  animation: slideUp 0.3s ease-out forwards;
 }
 
-.delay-100 {
-  animation-delay: 0.1s;
-}
-
-.option-btn, .toggle-btn {
+.toggle-btn, .option-btn {
   transition: all 0.3s ease;
   touch-action: manipulation;
-  border: 2px solid #d4a373; /* Doré pour Candle Bar */
+  border: 2px solid #d4a373;
   border-radius: 12px;
-  background-color: #fef3e6; /* Beige clair */
-}
-
-.toggle-btn {
   background-color: #fef3e6;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .toggle-btn.selected {
-  background-color: #f4c7b6; /* Rose poudré */
-  border-color: #b45309; /* Ambre profond */
-  color: #1f2937; /* Gris anthracite */
+  background-color: #f4c7b6;
+  border-color: #b45309;
+  color: #1f2937;
 }
 
-.toggle-btn:hover, .option-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(rgba(212, 163, 115, 0.2), rgba(212, 163, 115, 0.2)); /* Effet cire fondue */
+.toggle-btn:active, .option-btn:active {
+  transform: scale(0.98);
+  background-image: linear-gradient(rgba(212, 163, 115, 0.2), rgba(212, 163, 115, 0.2));
 }
 
-#profileChart {
-  max-height: 250px;
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff, #fff3e6);
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.perfume-item {
+.product-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
   cursor: pointer;
-  transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
-.perfume-item:hover {
-  background-color: #fef3e6;
+.product-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  text-align: center;
+  color: #1f2937;
+  padding: 0 0.5rem;
+  margin-top: 0.5rem;
 }
 
-.perfume-details {
-  display: none;
-  padding: 10px;
-  background-color: #f9fafb;
-  border-radius: 0 0 8px 8px;
-}
-
-.perfume-item.active .perfume-details {
-  display: block;
-}
-
-.mist-particle {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: rgba(212, 163, 115, 0.4); /* Doré léger */
-  border-radius: 50%;
-  animation: mist 2.5s infinite;
+.product-card.active .product-info {
+  max-height: 120px;
+  padding: 0.75rem 0;
 }
 
 .font-playfair {
@@ -91,16 +81,93 @@
   font-family: 'Lora', serif;
 }
 
-@media (max-width: 640px) {
-  .toggle-btn, .option-btn {
-    padding: 12px;
-    font-size: 0.9rem;
+/* Dark Theme */
+.dark-theme {
+  background-color: #1f2937;
+  color: #d4a373;
+}
+
+.dark-theme .bg-amber-50 {
+  background-color: #1f2937 !important;
+}
+
+.dark-theme .bg-rose-50 {
+  background-color: #2d3748 !important;
+}
+
+.dark-theme .bg-amber-100 {
+  background-color: #2d3748 !important;
+}
+
+.dark-theme .text-gray-800 {
+  color: #d4a373 !important;
+}
+
+.dark-theme .text-gray-600 {
+  color: #9ca3af !important;
+}
+
+.dark-theme .bg-white {
+  background-color: #2d3748 !important;
+}
+
+.dark-theme .bg-gray-200 {
+  background-color: #4a5568 !important;
+}
+
+.dark-theme .text-gray-700 {
+  color: #a0aec0 !important;
+}
+
+.dark-theme .bg-amber-400 {
+  background-color: #b45309 !important;
+}
+
+.dark-theme .hover:bg-amber-500 {
+  background-color: #a16207 !important;
+}
+
+.dark-theme .product-card {
+  background: linear-gradient(135deg, #2d3748, #3b4a5e);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .product-info {
+  color: #d4a373;
+}
+
+.dark-theme .toggle-btn, .dark-theme .option-btn {
+  background-color: #4a5568;
+  border-color: #b45309;
+  color: #d4a373;
+}
+
+.dark-theme .toggle-btn.selected {
+  background-color: #6b7280;
+  color: #f4c7b6;
+}
+
+/* Mobile-first responsive design */
+@media (min-width: 640px) {
+  #productGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  #question {
-    font-size: 1.1rem;
+  .product-card img {
+    height: 180px;
   }
-  button {
-    padding: 10px 16px;
-    font-size: 0.9rem;
+  nav .container {
+    flex-direction: row;
+  }
+  #navMenu {
+    display: flex;
+  }
+  #menuToggle, #mobileMenu {
+    display: none;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h1 {
+    font-size: 3rem;
   }
 }
