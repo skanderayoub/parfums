@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>${product.description}</p>
       </div>
     `;
-        card.querySelector("img").addEventListener("click", () => card.classList.toggle("active"));
+        //card.querySelector("img").addEventListener("click", () => card.classList.toggle("active"));
         productGrid.appendChild(card);
     });
 });
@@ -297,15 +297,32 @@ if (document.getElementById("quiz")) {
                 datasets: [{
                     label: "Votre Profil",
                     data: Object.values(profileScores),
-                    backgroundColor: "rgba(212, 163, 115, 0.2)",
-                    borderColor: "rgba(212, 163, 115, 1)",
-                    borderWidth: 2
+                    backgroundColor: "rgba(139, 155, 168, 0.8)", // Fond plus opaque
+                    borderColor: "#8A9BA8", // Bordure contrastée
+                    borderWidth: 3, // Épaisseur accrue
+                    pointBackgroundColor: "#E5EAF2", // Points plus visibles
+                    pointBorderColor: "#8A9BA8",
+                    pointBorderWidth: 2,
+                    pointRadius: 5
                 }]
             },
             options: {
                 animation: { duration: 1000, easing: "easeOutQuart" },
-                scales: { r: { beginAtZero: true, max: Math.max(...Object.values(profileScores)) + 5, ticks: { stepSize: 5 } } },
-                plugins: { legend: { display: false } }
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: Math.max(...Object.values(profileScores)) + 5,
+                        ticks: { stepSize: 5, color: "#E5EAF2" }, // Étiquettes plus visibles
+                        grid: { color: "rgba(107, 114, 128, 0.3)" } // Grille en gris olive léger
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: "top",
+                        labels: { color: "#E5EAF2", font: { size: 14 } } // Légende plus visible
+                    }
+                }
             }
         });
 
