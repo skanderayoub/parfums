@@ -16,7 +16,9 @@
       <a href="index.html" class="text-2xl font-playfair font-bold text-amber-600">Candle Bar</a>
       <div class="hidden md:flex space-x-6 items-center" id="navMenu">
         <a href="#products" class="text-gray-600 hover:text-amber-600 font-medium">Produits</a>
+        <a href="#scents" class="text-gray-600 hover:text-amber-600 font-medium">Senteurs</a>
         <a href="quiz.html" class="text-gray-600 hover:text-amber-600 font-medium">Profil Olfactif</a>
+        <a href="about.html" class="text-gray-600 hover:text-amber-600 font-medium">À propos</a>
         <a href="contact.html" class="text-gray-600 hover:text-amber-600 font-medium">Contact</a>
         <button id="themeToggle" class="text-gray-600 hover:text-amber-600 flex items-center">
           <i class="fas fa-moon mr-2"></i> Thème
@@ -28,7 +30,9 @@
     </div>
     <div id="mobileMenu" class="hidden md:hidden bg-rose-50 px-4 py-2 shadow-sm">
       <a href="#products" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Produits</a>
+      <a href="#scents" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Senteurs</a>
       <a href="quiz.html" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Profil Olfactif</a>
+      <a href="about.html" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">À propos</a>
       <a href="contact.html" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Contact</a>
       <button id="mobileThemeToggle" class="block py-2 text-gray-600 hover:text-amber-600 flex items-center">
         <i class="fas fa-moon mr-2"></i> Thème
@@ -36,25 +40,33 @@
     </div>
   </nav>
 
-  <!-- Hero Section with Background Video -->
-  <section class="relative min-h-screen flex items-center justify-center">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center hero-section">
     <video class="absolute top-0 left-0 w-full h-full object-cover z-0" autoplay muted loop playsinline>
       <source src="assets/intro.mp4" type="video/mp4">
       Votre navigateur ne prend pas en charge la lecture de vidéos.
     </video>
-    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-10"></div>
-    <div class="container mx-auto px-4 text-center relative z-20">
-      <h1 class="text-4xl md:text-5xl font-playfair font-bold text-white animate-fade-in">Candle Bar</h1>
-      <p class="mt-4 text-lg md:text-xl text-white animate-fade-in">Découvrez nos bougies et diffuseurs parfumés artisanaux, conçus pour sublimer chaque instant.</p>
-      <a href="#products" class="mt-6 inline-block bg-amber-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-amber-700 transition-colors">Explorez nos produits</a>
+    <div class="absolute top-10 left-0 w-full h-full bg-black opacity-80 z-10 hero-overlay"></div>
+    <div class="container mx-auto px-4 text-center relative z-20 hero-content">
+      <h1 class="text-5xl md:text-6xl font-playfair font-bold text-white mb-6 animate-animate-up">Candle Bar</h1>
+      <p class="text-xl md:text-2xl font-medium text-white mb-8 animate-animate-up">Découvrez nos bougies et diffuseurs parfumés artisanaux, conçus pour sublimer chaque instant.</p>
+      <a href="#products" class="inline-block bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-amber-700 hover:scale-105 transition-all duration-300 animate-animate-up">Explorer nos produits</a>
     </div>
   </section>
 
   <!-- Products Section -->
   <section id="products" class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center text-gray-800 mb-8">Nos Produits</h2>
+      <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-8 text-gray-800 animate-fade-in-up">Nos Produits</h2>
       <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Scents Section -->
+  <section id="scents" class="py-16 bg-amber-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-8 text-gray-800 animate-fade-in-up">Nos Senteurs</h2>
+      <div id="scentGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </div>
   </section>
 
@@ -63,7 +75,7 @@
     <div class="container mx-auto px-4 text-center">
       <p class="text-gray-600">© 2025 Candle Bar. Tous droits réservés.</p>
       <div class="mt-4 flex justify-center space-x-4">
-        <a href="#" class="text-gray-600 hover:text-amber-600">À propos</a>
+        <a href="about.html" class="text-gray-600 hover:text-amber-600">À propos</a>
         <a href="contact.html" class="text-gray-600 hover:text-amber-600">Contact</a>
       </div>
     </div>

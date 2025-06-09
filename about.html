@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Candle Bar</title>
+  <title>À propos - Candle Bar</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -40,34 +40,25 @@
     </div>
   </nav>
 
-  <!-- Contact Section -->
-  <section class="py-16 bg-white">
+  <!-- About Section -->
+  <section id="aboutContent" class="about-section py-16">
     <div class="container mx-auto px-4">
-      <h1 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-8 animate-fade-in-up">Nous Contacter</h1>
-      <div class="max-w-lg mx-auto animate-fade-in-up">
-        <form id="contactForm" class="space-y-4">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-600">Nom</label>
-            <input type="text" id="name" name="name" class="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-amber-600" required>
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
-            <input type="email" id="email" name="email" class="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-amber-600" required>
-          </div>
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-600">Message</label>
-            <textarea id="message" name="message" rows="4" class="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-amber-600" required></textarea>
-          </div>
-          <button type="submit" class="w-full bg-amber-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-amber-700 transition-colors">Envoyer</button>
-        </form>
+      <h1 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-8 animate-fade-in-up">À propos de Candle Bar</h1>
+      <div class="max-w-3xl mx-auto animate-fade-in-up">
+        <p class="mb-4">Fondée en 2020, Candle Bar est une marque artisanale dédiée à la création de bougies et diffuseurs parfumés d'exception. Notre mission est de transformer chaque instant en une expérience sensorielle unique, en combinant des senteurs raffinées avec un design élégant.</p>
+        <p class="mb-4">Inspirés par la richesse des parfums naturels et la beauté des traditions artisanales, nous sélectionnons avec soin des ingrédients de haute qualité pour offrir des produits qui éveillent les sens et apaisent l'esprit. Chaque bougie et diffuseur est conçu pour apporter chaleur et sérénité à votre espace.</p>
+        <p class="mb-4">Chez Candle Bar, nous croyons en la puissance des petites attentions. Que ce soit pour un moment de détente, une soirée spéciale ou un cadeau mémorable, nos créations sont là pour sublimer votre quotidien.</p>
       </div>
-      <!-- Map Section -->
-      <div class="max-w-3xl mx-auto mt-12 animate-fade-in-up">
-        <h2 class="text-2xl font-playfair font-bold text-center mb-6">Notre Boutique</h2>
-        <div class="map-container">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.657896057697!2d10.181532315205!3d36.806494979947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd337f10f8f0cb%3A0x4d3a06b5f4a4f0a!2sTunis%2C%20Tunisia!5e0!3m2!1sen!2sus!4v1697051234567!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h2 class="text-2xl font-playfair font-bold text-center mt-12 mb-6 animate-fade-in-up">Nos Valeurs</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto animate-fade-in-up">
+        <div class="p-4 bg-amber-50 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-2">Artisanat</h3>
+          <p>Chaque produit est conçu avec passion et précision, dans le respect des techniques traditionnelles.</p>
         </div>
-        <p class="text-center mt-4 text-gray-600">Visitez-nous à notre boutique située au cœur de Tunis !</p>
+        <div class="p-4 bg-amber-50 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold mb-2">Qualité</h3>
+          <p>Nous utilisons des ingrédients premium pour garantir une expérience olfactive exceptionnelle.</p>
+        </div>
       </div>
     </div>
   </section>

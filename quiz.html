@@ -12,12 +12,14 @@
 </head>
 <body class="bg-amber-50 text-gray-800 font-lora transition-colors duration-300">
   <!-- Navbar -->
-  <nav class="bg-rose-50 shadow-sm fixed w-full top-0 z-10">
+  <nav class="bg-rose-50 shadow-sm fixed w-full top-0 z-50">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <a href="index.html" class="text-2xl font-playfair font-bold text-amber-600">Candle Bar</a>
       <div class="hidden md:flex space-x-6 items-center" id="navMenu">
         <a href="index.html#products" class="text-gray-600 hover:text-amber-600 font-medium">Produits</a>
+        <a href="index.html#scents" class="text-gray-600 hover:text-amber-600 font-medium">Senteurs</a>
         <a href="quiz.html" class="text-gray-600 hover:text-amber-600 font-medium">Profil Olfactif</a>
+        <a href="about.html" class="text-gray-600 hover:text-amber-600 font-medium">À propos</a>
         <a href="contact.html" class="text-gray-600 hover:text-amber-600 font-medium">Contact</a>
         <button id="themeToggle" class="text-gray-600 hover:text-amber-600 flex items-center">
           <i class="fas fa-moon mr-2"></i> Thème
@@ -29,7 +31,9 @@
     </div>
     <div id="mobileMenu" class="hidden md:hidden bg-rose-50 px-4 py-2 shadow-sm">
       <a href="index.html#products" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Produits</a>
+      <a href="index.html#scents" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Senteurs</a>
       <a href="quiz.html" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Profil Olfactif</a>
+      <a href="about.html" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">À propos</a>
       <a href="contact.html" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Contact</a>
       <button id="mobileThemeToggle" class="block py-2 text-gray-600 hover:text-amber-600 flex items-center">
         <i class="fas fa-moon mr-2"></i> Thème
@@ -38,36 +42,16 @@
   </nav>
 
   <!-- Quiz Section -->
-  <section id="quiz" class="min-h-screen flex items-center justify-center bg-amber-50 py-16">
+  <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center text-gray-800 mb-8">Découvrir Mon Profil Olfactif</h2>
-      <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <div class="relative pt-2">
-          <div class="w-full bg-gray-200 rounded-full h-2">
-            <div id="progressBar" class="bg-amber-600 h-2 rounded-full" style="width: 0%"></div>
-          </div>
-          <p id="progressText" class="text-sm text-gray-600 text-right mt-2">0%</p>
+      <h1 class="text-3xl md:text-4xl font-playfair font-bold text-center mb-8 animate-fade-in-up">Découvrez Votre Profil Olfactif</h1>
+      <div class="quiz-container animate-fade-in-up">
+        <div class="progress-bar">
+          <div id="progressBar" class="progress-bar-fill" style="width: 0%;"></div>
         </div>
-        <h3 id="question" class="text-xl font-semibold text-center mt-6"></h3>
-        <div id="options" class="mt-6 space-y-4"></div>
-        <div class="mt-8 flex justify-between">
-          <button id="prevBtn" class="hidden bg-gray-200 text-gray-600 font-medium py-2 px-6 rounded-lg hover:bg-gray-300 transition-colors">Précédent</button>
-          <button id="nextBtn" class="bg-amber-600 text-white font-medium py-2 px-6 rounded-lg hover:bg-amber-700 transition-colors">Suivant</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Results Section -->
-  <section id="results" class="hidden min-h-screen flex items-center justify-center bg-amber-50 py-16">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center text-gray-800 mb-8">Votre Signature Candle Bar</h2>
-      <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
-        <p id="profileResult" class="text-lg text-center text-gray-600"></p>
-        <canvas id="profileChart" class="mt-6"></canvas>
-        <h3 class="text-xl font-semibold text-center mt-8">Parfums et Bougies Recommandés</h3>
-        <ul id="perfumeList" class="mt-4 space-y-4"></ul>
-        <button id="restartQuiz" class="mt-8 w-full bg-amber-600 text-white font-medium py-3 rounded-lg hover:bg-amber-700 transition-colors">Recommencer</button>
+        <p id="progressText" class="text-center text-sm mt-2">0%</p>
+        <div id="quizContent" class="mt-6"></div>
+        <div id="quizNavigation" class="quiz-navigation"></div>
       </div>
     </div>
   </section>
@@ -75,14 +59,15 @@
   <!-- Footer -->
   <footer class="bg-rose-50 py-6">
     <div class="container mx-auto px-4 text-center">
-      <p class="text-gray-600">&copy; 2025 Candle Bar. Tous droits réservés.</p>
+      <p class="text-gray-600">© 2025 Candle Bar. Tous droits réservés.</p>
       <div class="mt-4 flex justify-center space-x-4">
-        <a href="#" class="text-gray-600 hover:text-amber-600">À propos</a>
+        <a href="about.html" class="text-gray-600 hover:text-amber-600">À propos</a>
         <a href="contact.html" class="text-gray-600 hover:text-amber-600">Contact</a>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script src="quiz.js"></script>
 </body>
 </html>

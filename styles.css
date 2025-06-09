@@ -9,6 +9,11 @@
   to { transform: translateX(0); opacity: 1; }
 }
 
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
 }
@@ -17,7 +22,23 @@
   animation: slideIn 0.5s ease-out forwards;
 }
 
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.animate-fade-in-up.is-visible {
+  animation-play-state: running;
+}
+
 /* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #FDF6F0;
   color: #3F2E2E;
@@ -48,6 +69,42 @@ nav a:hover, nav button:hover {
   background-color: transparent;
   border: none;
   padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 20;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: #FFFFFF !important;
+  transform: none;
+}
+
+.hero-content h1, .hero-content p, .hero-content a {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: #FFFFFF !important;
 }
 
 /* Product Card */
@@ -92,33 +149,150 @@ nav a:hover, nav button:hover {
   padding: 1rem;
 }
 
-/* Buttons */
-.toggle-btn, .option-btn {
-  transition: all 0.3s ease;
-  border: 2px solid #D4A373;
+/* Scent Card */
+.scent-card {
+  background: #FFFFFF;
   border-radius: 12px;
-  background-color: #FFFFFF;
-  font-size: 1rem;
-  padding: 0.75rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
-.toggle-btn:hover, .option-btn:hover {
-  background-color: #FFF5EE;
-  transform: translateY(-1px);
+.scent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.toggle-btn.selected {
-  background-color: #EAD8D1;
-  border-color: #A67B5B;
+.scent-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
   color: #3F2E2E;
 }
 
-.toggle-btn:active, .option-btn:active {
-  transform: scale(0.98);
+.scent-card p {
+  color: #3F2E2E;
+}
+
+.scent-card .products-list {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+/* Map Container */
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  height: 400px;
+  width: 100%;
+}
+
+/* About Section */
+.about-section {
+  background-color: #FFFFFF;
+  padding: 4rem 1rem;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3F2E2E;
+}
+
+.about-section p {
+  color: #3F2E2E;
+  margin-bottom: 1rem;
+}
+
+/* Quiz Section */
+.quiz-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #E5E7EB;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #D4A373;
+  transition: width 0.3s ease;
+}
+
+.option-btn, .toggle-btn {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 2px solid #D4A373;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  color: #3F2E2E;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option-btn:hover, .toggle-btn:hover {
+  background-color: #FFF5EE;
+  transform: translateY(-2px);
+}
+
+.option-btn.selected, .toggle-btn.selected {
+  background-color: #EAD8D1;
+  border-color: #A67B5B;
+}
+
+.quiz-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.quiz-navigation button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.quiz-navigation button:disabled {
+  background-color: #E5E7EB;
+  cursor: not-allowed;
+}
+
+.chart-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.perfume-item {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #FFF5EE;
+  transition: all 0.3s ease;
+}
+
+.perfume-item:hover {
+  transform: translateY(-2px);
+  background-color: #FFEDE5;
+}
+
+.perfume-item.active {
+  background-color: #EAD8D1;
 }
 
 /* Form Inputs */
@@ -194,15 +368,82 @@ button[type="submit"]:hover {
   color: #E5E7EB;
 }
 
-.dark-theme .toggle-btn, .dark-theme .option-btn {
+.dark-theme .scent-card {
+  background: #2D2D36;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .scent-card h4 {
+  color: #E5E7EB;
+}
+
+.dark-theme .scent-card p {
+  color: #E5E7EB;
+}
+
+.dark-theme .scent-card .products-list {
+  color: #9CA3AF;
+}
+
+.dark-theme .map-container {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .about-section {
+  background-color: #2D2D36;
+}
+
+.dark-theme .about-section h2 {
+  color: #E5E7EB;
+}
+
+.dark-theme .about-section p {
+  color: #E5E7EB;
+}
+
+.dark-theme .quiz-container {
+  background-color: #2D2D36;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .progress-bar {
+  background-color: #4B5563;
+}
+
+.dark-theme .progress-bar-fill {
+  background-color: #A67B5B;
+}
+
+.dark-theme .option-btn, .dark-theme .toggle-btn {
   background-color: #3F3F46;
   border-color: #9CA3AF;
   color: #E5E7EB;
 }
 
-.dark-theme .toggle-btn.selected {
+.dark-theme .option-btn:hover, .dark-theme .toggle-btn:hover {
   background-color: #4B5563;
-  border-color: #9CA3AF;
+}
+
+.dark-theme .option-btn.selected, .dark-theme .toggle-btn.selected {
+  background-color: #6B7280;
+  border-color: #A67B5B;
+}
+
+.dark-theme .chart-container {
+  background-color: #2D2D36;
+}
+
+.dark-theme .perfume-item {
+  background-color: #3F3F46;
+  color: #E5E7EB;
+}
+
+.dark-theme .perfume-item:hover {
+  background-color: #4B5563;
+}
+
+.dark-theme .perfume-item.active {
+  background-color: #6B7280;
 }
 
 .dark-theme input, .dark-theme textarea {
@@ -221,10 +462,15 @@ button[type="submit"]:hover {
 }
 
 .dark-theme button:hover {
-  background-color: #8A5A44;
+  background-color: #8A5E2F;
 }
 
-.dark-theme #themeToggle, .dark-theme #mobileThemeToggle {
+.dark-theme #themeToggle {
+  background-color: transparent;
+  border: none;
+}
+
+.dark-theme #mobileThemeToggle {
   background-color: transparent;
   border: none;
 }
@@ -240,13 +486,27 @@ button[type="submit"]:hover {
 
 /* Responsive Design */
 @media (min-width: 640px) {
-  #productGrid {
+  #productGrid, #scentGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  #productGrid {
+  #productGrid, #scentGrid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+  }
+
+  .quiz-container {
+    padding: 1rem;
+  }
+
+  .chart-container {
+    max-width: 300px;
   }
 }
