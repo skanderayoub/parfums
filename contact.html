@@ -1,66 +1,77 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Candle Bar - Contact</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Contact - Candle Bar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-amber-50 text-gray-800 font-lora">
-  <!-- Navigation Bar -->
-  <nav class="bg-rose-50 p-4 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-xl md:text-2xl font-bold font-playfair text-amber-600">Candle Bar</a>
-      <div class="md:hidden">
-        <button id="menuToggle" class="text-amber-600 focus:outline-none">
-          <i class="fas fa-bars text-2xl"></i>
+<body class="bg-amber-50 text-gray-800 font-lora transition-colors duration-300">
+  <!-- Navbar -->
+  <nav class="bg-rose-50 shadow-sm fixed w-full top-0 z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-playfair font-bold text-amber-600">Candle Bar</a>
+      <div class="hidden md:flex space-x-6 items-center" id="navMenu">
+        <a href="index.html#products" class="text-gray-600 hover:text-amber-600 font-medium">Produits</a>
+        <a href="quiz.html" class="text-gray-600 hover:text-amber-600 font-medium">Profil Olfactif</a>
+        <a href="contact.html" class="text-gray-600 hover:text-amber-600 font-medium">Contact</a>
+        <button id="themeToggle" class="text-gray-600 hover:text-amber-600 flex items-center">
+          <i class="fas fa-moon mr-2"></i> Thème
         </button>
       </div>
-      <div id="navMenu" class="hidden md:flex md:space-x-6">
-        <a href="index.html" class="hover:text-amber-600">Produits</a>
-        <a href="quiz.html" class="hover:text-amber-600">Profil Olfactif</a>
-        <a href="contact.html" class="hover:text-amber-600">Contact</a>
-        <button id="themeToggle" class="bg-amber-400 text-gray-800 px-3 py-1 rounded-full hover:bg-amber-500 transition flex items-center">
-          <i class="fas fa-moon mr-1"></i> Thème
-        </button>
-      </div>
+      <button id="menuToggle" class="md:hidden text-gray-600 focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
-      <a href="index.html" class="block px-4 py-2 hover:bg-amber-100 rounded">Produits</a>
-      <a href="quiz.html" class="block px-4 py-2 hover:bg-amber-100 rounded">Profil Olfactif</a>
-      <a href="contact.html" class="block px-4 py-2 hover:bg-amber-100 rounded">Contact</a>
-      <button id="mobileThemeToggle" class="w-full text-left px-4 py-2 hover:bg-amber-100 rounded flex items-center">
+    <div id="mobileMenu" class="hidden md:hidden bg-rose-50 px-4 py-2 shadow-sm">
+      <a href="index.html#products" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Produits</a>
+      <a href="quiz.html" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Profil Olfactif</a>
+      <a href="contact.html" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Contact</a>
+      <button id="mobileThemeToggle" class="block py-2 text-gray-600 hover:text-amber-600 flex items-center">
         <i class="fas fa-moon mr-2"></i> Thème
       </button>
     </div>
   </nav>
 
   <!-- Contact Section -->
-  <section class="py-6 px-4">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 font-playfair">Contactez-nous</h2>
-    <div class="max-w-md mx-auto bg-white bg-opacity-95 p-6 rounded-lg shadow-lg">
-      <p class="text-center mb-4">Remplissez vos coordonnées ci-dessous pour nous contacter :</p>
-      <p class="text-center mb-4">Email: [Votre email]</p>
-      <p class="text-center mb-4">Téléphone: [Votre numéro]</p>
-      <p class="text-center mb-4">Adresse: [Votre adresse]</p>
-      <form class="space-y-4">
-        <input type="text" placeholder="Votre nom" class="w-full p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-400">
-        <input type="email" placeholder="Votre email" class="w-full p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-400">
-        <textarea placeholder="Votre message" class="w-full p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-400" rows="4"></textarea>
-        <button type="submit" class="w-full bg-amber-400 text-gray-800 px-4 py-2 rounded-full hover:bg-amber-500 transition transform hover:scale-105 text-base">Envoyer</button>
-      </form>
+  <section class="min-h-screen flex items-center justify-center bg-amber-50 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center text-gray-800 mb-8">Contactez-nous</h2>
+      <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <p class="text-gray-600 mb-4">Remplissez vos coordonnées ci-dessous pour nous contacter :</p>
+        <p class="text-gray-600 mb-2"><strong>Email:</strong> contact@candlebar.com</p>
+        <p class="text-gray-600 mb-2"><strong>Téléphone:</strong> 21 123 456</p>
+        <p class="text-gray-600 mb-6"><strong>Adresse:</strong> Chez Skan, Tunis</p>
+        <form id="contactForm" class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-600">Nom</label>
+            <input type="text" id="name" name="name" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:outline-none" placeholder="Votre nom" required>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
+            <input type="email" id="email" name="email" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:outline-none" placeholder="Votre email" required>
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-600">Message</label>
+            <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-600 focus:outline-none" placeholder="Votre message" required></textarea>
+          </div>
+          <button type="submit" class="w-full bg-amber-600 text-white font-medium py-3 rounded-lg hover:bg-amber-700 transition-colors">Envoyer</button>
+        </form>
+      </div>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer class="bg-rose-50 text-gray-600 py-4 px-4 text-center">
-    <p class="text-sm">© 2025 Candle Bar. Tous droits réservés.</p>
-    <div class="mt-2 space-x-4 text-sm">
-      <a href="#about" class="hover:text-amber-600">À propos</a>
-      <a href="#contact" class="hover:text-amber-600">Contact</a>
+  <!-- Footer -->
+  <footer class="bg-rose-50 py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-600">&copy; 2025 Candle Bar. Tous droits réservés.</p>
+      <div class="mt-4 flex justify-center space-x-4">
+        <a href="#" class="text-gray-600 hover:text-amber-600">À propos</a>
+        <a href="contact.html" class="text-gray-600 hover:text-amber-600">Contact</a>
+      </div>
     </div>
   </footer>
 

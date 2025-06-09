@@ -1,75 +1,75 @@
 // Products Data
 const productsData = [
     { name: "Bougie Simple", image: "assets/bougie_simple.jpg", price: "65,70 TND", description: "Une bougie élégante pour une ambiance chaleureuse." },
-    { name: "Bougie 390g", image: "assets/bougie_390g.jpg", price: "131,70 TND", description: "✨ L'élégance intemporelle, notre bougie parfumée 390g en céramique noir mat, une création exquise de Candle Bar. 🖤🕯️" },
-    { name: "Diffuseur Noir Mat 125ml", image: "assets/DiffuseurNoirMat125ml.jpg", price: "131,70 TND", description: "Transformez votre espace avec notre diffuseur élégant. Les tiges en rotin dispersent délicatement le parfum." },
+    { name: "Bougie 390g", image: "assets/bougie_390g.jpg", price: "131,70 TND", description: "✨ L'élégance intemporelle, notre bougie parfumée 390g en céramique noir mat." },
+    { name: "Diffuseur Noir Mat 125ml", image: "assets/DiffuseurNoirMat125ml.jpg", price: "131,70 TND", description: "Transformez votre espace avec notre diffuseur élégant." },
     { name: "Diffuseur Voiture", image: "assets/DiffuseurVoiture.jpg", price: "49,20 TND", description: "Choisissez parmi nos senteurs enchanteresses pour vos trajets." }
 ];
 
-// Quiz Data (abbreviated for brevity, full version as before)
+// Quiz Data (unchanged for brevity)
 const questions = [
     {
         question: "Quel est votre sexe ?",
         type: "single",
         options: [
-            { text: "Féminin", value: "female", score: {}, icon: "" },
-            { text: "Masculin", value: "male", score: {}, icon: "" },
-            { text: "Unisexe/Non-binaire", value: "unisex", score: {}, icon: "" }
+            { text: "Féminin", value: "female", score: {}, icon: "♀️" },
+            { text: "Masculin", value: "male", score: {}, icon: "♂️" },
+            { text: "Unisexe/Non-binaire", value: "unisex", score: {}, icon: "⚧️" }
         ]
     },
     {
         question: "Quelle est votre tranche d'âge ?",
         type: "single",
         options: [
-            { text: "18-23 ans", value: "18-23", score: {}, icon: "" },
-            { text: "23-40 ans", value: "23-40", score: {}, icon: "" },
-            { text: "40 ans et plus", value: "40+", score: {}, icon: "" }
+            { text: "18-23 ans", value: "18-23", score: {}, icon: "🎒" },
+            { text: "23-40 ans", value: "23-40", score: {}, icon: "💼" },
+            { text: "40 ans et plus", value: "40+", score: {}, icon: "🧳" }
         ]
     },
     {
-        question: "Quelles familles olfactives allument votre flamme ? (Plusieurs choix possibles)",
+        question: "Quelles familles olfactives allument votre flamme ?",
         type: "multiple",
         multiple: true,
         options: [
-            { text: "Florale (rose, jasmin, tubéreuse)", value: "floral", score: { floral: 3 }, icon: "🌹" },
-            { text: "Boisée (cèdre, santal, oud)", value: "woody", score: { woody: 3 }, icon: "🌳" },
-            { text: "Orientale (vanille, ambre, musc)", value: "oriental", score: { oriental: 3 }, icon: "🪔" },
-            { text: "Fraîche (bergamote, citron, notes marines)", value: "fresh", score: { fresh: 3 }, icon: "🍋" },
-            { text: "Épicée (poivre, safran, cardamome)", value: "spicy", score: { spicy: 3 }, icon: "🌶️" }
+            { text: "Florale (rose, jasmin)", value: "floral", score: { floral: 3 }, icon: "🌹" },
+            { text: "Boisée (cèdre, santal)", value: "woody", score: { woody: 3 }, icon: "🌳" },
+            { text: "Orientale (vanille, ambre)", value: "oriental", score: { oriental: 3 }, icon: "🪔" },
+            { text: "Fraîche (bergamote, citron)", value: "fresh", score: { fresh: 3 }, icon: "🍋" },
+            { text: "Épicée (poivre, safran)", value: "spicy", score: { spicy: 3 }, icon: "🌶️" }
         ]
     },
     {
-        question: "Dans quels moments votre parfum brille-t-il ? (Plusieurs choix possibles)",
+        question: "Dans quels moments votre parfum brille-t-il ?",
         type: "multiple",
         multiple: true,
         options: [
-            { text: "Au quotidien (travail, casual)", value: "daily", score: { fresh: 2, floral: 1 }, icon: "☀️" },
-            { text: "Soirées ou occasions spéciales", value: "evening", score: { oriental: 2, woody: 1 }, icon: "🌙" },
-            { text: "En fonction des saisons", value: "seasonal", score: { fresh: 1, floral: 1 }, icon: "🍂" },
-            { text: "Pour exprimer ma personnalité", value: "personality", score: { oriental: 1, floral: 1, woody: 1 }, icon: "✨" }
+            { text: "Au quotidien", value: "daily", score: { fresh: 2, floral: 1 }, icon: "☀️" },
+            { text: "Soirées spéciales", value: "evening", score: { oriental: 2, woody: 1 }, icon: "🌙" },
+            { text: "Saisons spécifiques", value: "seasonal", score: { fresh: 1, floral: 1 }, icon: "🍂" },
+            { text: "Pour ma personnalité", value: "personality", score: { oriental: 1, floral: 1, woody: 1 }, icon: "✨" }
         ]
     },
     {
         question: "Quel est votre type de peau ?",
         type: "single",
         options: [
-            { text: "Grasse (parfums plus intenses)", value: "oily", score: { oriental: 2, spicy: 1 }, icon: "💧" },
-            { text: "Sèche (parfums moins persistants)", value: "dry", score: { floral: 2, fresh: 1 }, icon: "🌵" },
-            { text: "Sensible (éviter certains ingrédients)", value: "sensitive", score: { fresh: 2, floral: 1 }, icon: "🍃" },
+            { text: "Grasse", value: "oily", score: { oriental: 2, spicy: 1 }, icon: "💧" },
+            { text: "Sèche", value: "dry", score: { floral: 2, fresh: 1 }, icon: "🌵" },
+            { text: "Sensible", value: "sensitive", score: { fresh: 2, floral: 1 }, icon: "🍃" },
             { text: "Normale", value: "normal", score: { floral: 1, woody: 1, oriental: 1, fresh: 1 }, icon: "⚖️" }
         ]
     },
     {
-        question: "Quelle intensité de parfum fait vibrer votre âme ?",
+        question: "Quelle intensité de parfum préférez-vous ?",
         type: "single",
         options: [
-            { text: "Légère et discrète", value: "light", score: { fresh: 2, floral: 1 }, icon: "💨" },
-            { text: "Modérée, équilibrée", value: "moderate", score: { floral: 1, woody: 1 }, icon: "🌬️" },
-            { text: "Intense et audacieuse", value: "bold", score: { oriental: 2, woody: 1 }, icon: "🔥" }
+            { text: "Légère", value: "light", score: { fresh: 2, floral: 1 }, icon: "💨" },
+            { text: "Modérée", value: "moderate", score: { floral: 1, woody: 1 }, icon: "🌬️" },
+            { text: "Intense", value: "bold", score: { oriental: 2, woody: 1 }, icon: "🔥" }
         ]
     },
     {
-        question: "Quelles notes olfactives enflamment vos sens ? (Plusieurs choix possibles)",
+        question: "Quelles notes olfactives vous attirent ?",
         type: "multiple",
         multiple: true,
         options: [
@@ -85,25 +85,25 @@ const questions = [
         question: "Comment décririez-vous votre personnalité ?",
         type: "single",
         options: [
-            { text: "Sophistiquée et élégante", value: "sophisticated", score: { floral: 2, oriental: 1 }, icon: "💎" },
-            { text: "Aventureuse et audacieuse", value: "adventurous", score: { woody: 2, spicy: 1 }, icon: "🏞️" },
-            { text: "Énergique et lumineuse", value: "energetic", score: { fresh: 2, floral: 1 }, icon: "⚡" },
-            { text: "Romantique et douce", value: "romantic", score: { floral: 2, oriental: 1 }, icon: "💖" }
+            { text: "Sophistiquée", value: "sophisticated", score: { floral: 2, oriental: 1 }, icon: "💎" },
+            { text: "Aventureuse", value: "adventurous", score: { woody: 2, spicy: 1 }, icon: "🏞️" },
+            { text: "Énergique", value: "energetic", score: { fresh: 2, floral: 1 }, icon: "⚡" },
+            { text: "Romantique", value: "romantic", score: { floral: 2, oriental: 1 }, icon: "💖" }
         ]
     },
     {
-        question: "Quelles saisons inspirent vos parfums ? (Plusieurs choix possibles)",
+        question: "Quelles saisons inspirent vos parfums ?",
         type: "multiple",
         multiple: true,
         options: [
-            { text: "Printemps (frais, floral)", value: "spring", score: { floral: 2, fresh: 1 }, icon: "🌸" },
-            { text: "Été (léger, citronné)", value: "summer", score: { fresh: 3 }, icon: "☀️" },
-            { text: "Automne (boisé, chaleureux)", value: "fall", score: { woody: 2, oriental: 1 }, icon: "🍂" },
-            { text: "Hiver (riche, épicé)", value: "winter", score: { oriental: 2, spicy: 1 }, icon: "❄️" }
+            { text: "Printemps", value: "spring", score: { floral: 2, fresh: 1 }, icon: "🌸" },
+            { text: "Été", value: "summer", score: { fresh: 3 }, icon: "☀️" },
+            { text: "Automne", value: "fall", score: { woody: 2, oriental: 1 }, icon: "🍂" },
+            { text: "Hiver", value: "winter", score: { oriental: 2, spicy: 1 }, icon: "❄️" }
         ]
     },
     {
-        question: "Quelle importance accordez-vous à la longévité de votre parfum ? (1 à 5)",
+        question: "Quelle importance accordez-vous à la longévité ?",
         type: "scale",
         options: [
             { text: "1 (Peu important)", value: 1, score: { fresh: 1 }, icon: "⏳" },
@@ -127,14 +127,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileThemeToggle = document.getElementById("mobileThemeToggle");
     const body = document.body;
     const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
     const mobileMenu = document.getElementById("mobileMenu");
 
-    // Check saved theme or default to light
+    // Theme Persistence
     const savedTheme = localStorage.getItem("theme") || "light";
     if (savedTheme === "dark") {
         body.classList.add("dark-theme");
-        themeToggle.innerHTML = '<i class="fas fa-sun mr-1"></i> Thème';
+        themeToggle.innerHTML = '<i class="fas fa-sun mr-2"></i> Thème';
         mobileThemeToggle.innerHTML = '<i class="fas fa-sun mr-2"></i> Thème';
     }
 
@@ -142,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toggle.addEventListener("click", () => {
             body.classList.toggle("dark-theme");
             const isDark = body.classList.contains("dark-theme");
-            toggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'} mr-${isDark ? 1 : 2}"></i> Thème`;
+            toggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'} mr-2"></i> Thème`;
             localStorage.setItem("theme", isDark ? "dark" : "light");
         });
     });
@@ -151,27 +150,39 @@ document.addEventListener("DOMContentLoaded", () => {
         mobileMenu.classList.toggle("hidden");
     });
 
-    // Products Logic
+    // Product Grid
     const productGrid = document.getElementById("productGrid");
-    productsData.forEach(product => {
-        const card = document.createElement("div");
-        card.className = "product-card animate-fade-in";
-        card.innerHTML = `
-      <div class="aspect-w-3 aspect-h-2">
-        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain cursor-pointer">
-      </div>
-      <h3 class="text-lg font-semibold mt-1 text-center">${product.name}</h3>
-      <div class="product-info text-sm">
-        <p class="font-bold">${product.price}</p>
-        <p>${product.description}</p>
-      </div>
-    `;
-        //card.querySelector("img").addEventListener("click", () => card.classList.toggle("active"));
-        productGrid.appendChild(card);
-    });
+    if (productGrid) {
+        productsData.forEach(product => {
+            const card = document.createElement("div");
+            card.className = "product-card animate-fade-in";
+            card.innerHTML = `
+        <div class="aspect-w-3 aspect-h-2">
+          <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover cursor-pointer" loading="lazy">
+        </div>
+        <h3 class="text-lg font-semibold mt-4 text-center">${product.name}</h3>
+        <div class="product-info text-sm">
+          <p class="font-bold">${product.price}</p>
+          <p>${product.description}</p>
+        </div>
+      `;
+            card.querySelector("img").addEventListener("click", () => card.classList.toggle("active"));
+            productGrid.appendChild(card);
+        });
+    }
+
+    // Contact Form
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Merci pour votre message ! Nous vous répondrons bientôt.");
+            contactForm.reset();
+        });
+    }
 });
 
-// Quiz Logic (only for quiz.html)
+// Quiz Logic
 if (document.getElementById("quiz")) {
     let currentQuestion = 0;
     let answers = {};
@@ -195,18 +206,18 @@ if (document.getElementById("quiz")) {
         questionElement.textContent = q.question;
         optionsElement.innerHTML = "";
         if (q.multiple) {
-            q.options.forEach((option, index) => {
+            q.options.forEach((option) => {
                 const btn = document.createElement("button");
-                btn.className = `toggle-btn w-full text-left flex items-center justify-between p-2 rounded ${answers[currentQuestion] && answers[currentQuestion].includes(option.value) ? "selected" : ""}`;
-                btn.innerHTML = `<span>${option.text}</span><span class="text-lg">${option.icon}</span>`;
+                btn.className = `toggle-btn w-full text-left p-3 rounded-lg ${answers[currentQuestion] && answers[currentQuestion].includes(option.value) ? "selected" : ""}`;
+                btn.innerHTML = `<span>${option.text}</span><span>${option.icon}</span>`;
                 btn.onclick = () => toggleOption(option.value, option.score);
                 optionsElement.appendChild(btn);
             });
         } else {
-            q.options.forEach((option, index) => {
+            q.options.forEach((option) => {
                 const btn = document.createElement("button");
-                btn.className = `option-btn w-full text-left flex items-center justify-between p-2 rounded hover:bg-amber-100 ${q.type === "scale" ? "justify-between" : ""}`;
-                btn.innerHTML = `<span>${option.text}</span><span class="text-lg">${option.icon}</span>`;
+                btn.className = `option-btn w-full text-left p-3 rounded-lg hover:bg-amber-50 ${answers[currentQuestion] === option.value ? "selected" : ""}`;
+                btn.innerHTML = `<span>${option.text}</span><span>${option.icon}</span>`;
                 btn.onclick = () => selectOption(option.value, option.score);
                 optionsElement.appendChild(btn);
             });
@@ -236,12 +247,12 @@ if (document.getElementById("quiz")) {
         if (index === -1) {
             answers[currentQuestion].push(value);
             Object.keys(score).forEach(key => {
-                profileScores[key] += score[key] / (answers[currentQuestion].length || 1);
+                profileScores[key] += score[key];
             });
         } else {
             answers[currentQuestion].splice(index, 1);
             Object.keys(score).forEach(key => {
-                profileScores[key] -= score[key] / (answers[currentQuestion].length + 1 || 1);
+                profileScores[key] -= score[key];
             });
         }
         showQuestion();
@@ -297,30 +308,30 @@ if (document.getElementById("quiz")) {
                 datasets: [{
                     label: "Votre Profil",
                     data: Object.values(profileScores),
-                    backgroundColor: "rgba(139, 155, 168, 0.8)", // Fond plus opaque
-                    borderColor: "#8A9BA8", // Bordure contrastée
-                    borderWidth: 3, // Épaisseur accrue
-                    pointBackgroundColor: "#E5EAF2", // Points plus visibles
-                    pointBorderColor: "#8A9BA8",
-                    pointBorderWidth: 2,
-                    pointRadius: 5
+                    backgroundColor: "rgba(212, 163, 115, 0.3)",
+                    borderColor: "#D4A373",
+                    borderWidth: 2,
+                    pointBackgroundColor: "#D4A373",
+                    pointBorderColor: "#FFFFFF",
+                    pointBorderWidth: 1,
+                    pointRadius: 4
                 }]
             },
             options: {
-                animation: { duration: 1000, easing: "easeOutQuart" },
+                animation: { duration: 1200, easing: "easeOutQuart" },
                 scales: {
                     r: {
                         beginAtZero: true,
                         max: Math.max(...Object.values(profileScores)) + 5,
-                        ticks: { stepSize: 5, color: "#E5EAF2" }, // Étiquettes plus visibles
-                        grid: { color: "rgba(107, 114, 128, 0.3)" } // Grille en gris olive léger
+                        ticks: { stepSize: 5, color: "#3F2E2E" },
+                        grid: { color: "rgba(63, 46, 46, 0.2)" }
                     }
                 },
                 plugins: {
                     legend: {
                         display: true,
                         position: "top",
-                        labels: { color: "#E5EAF2", font: { size: 14 } } // Légende plus visible
+                        labels: { color: "#3F2E2E", font: { size: 14 } }
                     }
                 }
             }
@@ -328,10 +339,10 @@ if (document.getElementById("quiz")) {
 
         const recommendations = getPerfumeRecommendations(dominantProfile, gender, ageRange, skinType, intensity, contexts);
         perfumeList.innerHTML = "";
-        recommendations.forEach((perfume, index) => {
+        recommendations.forEach((perfume) => {
             const li = document.createElement("li");
-            li.className = "perfume-item p-2 rounded";
-            li.innerHTML = `<div class="font-semibold">${perfume.name}</div><div class="perfume-details text-xs">${perfume.details}</div>`;
+            li.className = "perfume-item p-3 rounded-lg bg-amber-50 hover:bg-amber-100 transition-colors";
+            li.innerHTML = `<div class="font-semibold">${perfume.name}</div><div class="text-sm text-gray-600">${perfume.details}</div>`;
             li.onclick = () => li.classList.toggle("active");
             perfumeList.appendChild(li);
         });
@@ -344,7 +355,7 @@ if (document.getElementById("quiz")) {
                 prevAnswers.forEach(value => {
                     const option = questions[currentQuestion].options.find(opt => opt.value === value);
                     Object.keys(option.score).forEach(key => {
-                        profileScores[key] -= option.score[key] / (prevAnswers.length || 1);
+                        profileScores[key] -= option.score[key];
                     });
                 });
             } else {
@@ -360,10 +371,7 @@ if (document.getElementById("quiz")) {
         }
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-        showQuestion();
-    });
-
+    showQuestion();
     nextBtn.onclick = () => {
         if (questions[currentQuestion].multiple) {
             if (answers[currentQuestion] && answers[currentQuestion].length > 0) {

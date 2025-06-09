@@ -1,75 +1,85 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Candle Bar - Profil Olfactif</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Profil Olfactif - Candle Bar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
-<body class="bg-amber-50 text-gray-800 font-lora">
-  <!-- Navigation Bar -->
-  <nav class="bg-rose-50 p-4 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="index.html" class="text-xl md:text-2xl font-bold font-playfair text-amber-600">Candle Bar</a>
-      <div class="md:hidden">
-        <button id="menuToggle" class="text-amber-600 focus:outline-none">
-          <i class="fas fa-bars text-2xl"></i>
+<body class="bg-amber-50 text-gray-800 font-lora transition-colors duration-300">
+  <!-- Navbar -->
+  <nav class="bg-rose-50 shadow-sm fixed w-full top-0 z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-playfair font-bold text-amber-600">Candle Bar</a>
+      <div class="hidden md:flex space-x-6 items-center" id="navMenu">
+        <a href="index.html#products" class="text-gray-600 hover:text-amber-600 font-medium">Produits</a>
+        <a href="quiz.html" class="text-gray-600 hover:text-amber-600 font-medium">Profil Olfactif</a>
+        <a href="contact.html" class="text-gray-600 hover:text-amber-600 font-medium">Contact</a>
+        <button id="themeToggle" class="text-gray-600 hover:text-amber-600 flex items-center">
+          <i class="fas fa-moon mr-2"></i> Thème
         </button>
       </div>
-      <div id="navMenu" class="hidden md:flex md:space-x-6">
-        <a href="index.html" class="hover:text-amber-600">Produits</a>
-        <a href="quiz.html" class="hover:text-amber-600">Profil Olfactif</a>
-        <a href="contact.html" class="hover:text-amber-600">Contact</a>
-        <button id="themeToggle" class="bg-amber-400 text-gray-800 px-3 py-1 rounded-full hover:bg-amber-500 transition flex items-center">
-          <i class="fas fa-moon mr-1"></i> Thème
-        </button>
-      </div>
+      <button id="menuToggle" class="md:hidden text-gray-600 focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
-      <a href="index.html" class="block px-4 py-2 hover:bg-amber-100 rounded">Produits</a>
-      <a href="quiz.html" class="block px-4 py-2 hover:bg-amber-100 rounded">Profil Olfactif</a>
-      <a href="contact.html" class="block px-4 py-2 hover:bg-amber-100 rounded">Contact</a>
-      <button id="mobileThemeToggle" class="w-full text-left px-4 py-2 hover:bg-amber-100 rounded flex items-center">
+    <div id="mobileMenu" class="hidden md:hidden bg-rose-50 px-4 py-2 shadow-sm">
+      <a href="index.html#products" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Produits</a>
+      <a href="quiz.html" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Profil Olfactif</a>
+      <a href="contact.html" class="block py-2 text-gray-600 hover:text-amber-600 font-medium">Contact</a>
+      <button id="mobileThemeToggle" class="block py-2 text-gray-600 hover:text-amber-600 flex items-center">
         <i class="fas fa-moon mr-2"></i> Thème
       </button>
     </div>
   </nav>
 
-  <!-- Olfactory Profile Section -->
-  <section id="olfactory-profile" class="py-6 px-4">
-    <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 font-playfair">Découvrir Mon Profil Olfactif</h2>
-    <div id="quiz" class="bg-white bg-opacity-95 p-6 rounded-lg shadow-lg max-w-md mx-auto">
-      <div class="w-full bg-gray-200 rounded-full h-3 mb-4 relative">
-        <div id="progressBar" class="bg-amber-400 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
-        <span id="progressText" class="absolute inset-0 text-center text-xs font-semibold text-gray-700"></span>
+  <!-- Quiz Section -->
+  <section id="quiz" class="min-h-screen flex items-center justify-center bg-amber-50 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center text-gray-800 mb-8">Découvrir Mon Profil Olfactif</h2>
+      <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <div class="relative pt-2">
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div id="progressBar" class="bg-amber-600 h-2 rounded-full" style="width: 0%"></div>
+          </div>
+          <p id="progressText" class="text-sm text-gray-600 text-right mt-2">0%</p>
+        </div>
+        <h3 id="question" class="text-xl font-semibold text-center mt-6"></h3>
+        <div id="options" class="mt-6 space-y-4"></div>
+        <div class="mt-8 flex justify-between">
+          <button id="prevBtn" class="hidden bg-gray-200 text-gray-600 font-medium py-2 px-6 rounded-lg hover:bg-gray-300 transition-colors">Précédent</button>
+          <button id="nextBtn" class="bg-amber-600 text-white font-medium py-2 px-6 rounded-lg hover:bg-amber-700 transition-colors">Suivant</button>
+        </div>
       </div>
-      <h2 id="question" class="text-xl md:text-2xl font-semibold mb-4 text-center"></h2>
-      <div id="options" class="space-y-3"></div>
-      <div class="flex justify-between mt-4 gap-2">
-        <button id="prevBtn" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition transform hover:scale-105 text-base">Précédent</button>
-        <button id="nextBtn" class="bg-amber-400 text-gray-800 px-4 py-2 rounded-full hover:bg-amber-500 transition transform hover:scale-105 text-base">Suivant</button>
-      </div>
-    </div>
-    <div id="results" class="hidden max-w-md mx-auto mt-6 bg-white bg-opacity-95 p-6 rounded-lg shadow-lg">
-      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center font-playfair">Votre Signature Candle Bar</h2>
-      <p id="profileResult" class="text-base mb-4 text-center"></p>
-      <canvas id="profileChart" class="mb-4"></canvas>
-      <h3 class="text-lg md:text-xl font-semibold mb-4 text-center font-playfair">Parfums et Bougies Recommandés</h3>
-      <ul id="perfumeList" class="list-disc pl-5 mb-4 text-sm"></ul>
-      <button id="restartQuiz" class="bg-amber-400 text-gray-800 px-6 py-3 rounded-full hover:bg-amber-500 transition transform hover:scale-105 w-full text-base">Recommencer</button>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer class="bg-rose-50 text-gray-600 py-4 px-4 text-center">
-    <p class="text-sm">© 2025 Candle Bar. Tous droits réservés.</p>
-    <div class="mt-2 space-x-4 text-sm">
-      <a href="#about" class="hover:text-amber-600">À propos</a>
-      <a href="#contact" class="hover:text-amber-600">Contact</a>
+  <!-- Results Section -->
+  <section id="results" class="hidden min-h-screen flex items-center justify-center bg-amber-50 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-playfair font-bold text-center text-gray-800 mb-8">Votre Signature Candle Bar</h2>
+      <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <p id="profileResult" class="text-lg text-center text-gray-600"></p>
+        <canvas id="profileChart" class="mt-6"></canvas>
+        <h3 class="text-xl font-semibold text-center mt-8">Parfums et Bougies Recommandés</h3>
+        <ul id="perfumeList" class="mt-4 space-y-4"></ul>
+        <button id="restartQuiz" class="mt-8 w-full bg-amber-600 text-white font-medium py-3 rounded-lg hover:bg-amber-700 transition-colors">Recommencer</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-rose-50 py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-600">&copy; 2025 Candle Bar. Tous droits réservés.</p>
+      <div class="mt-4 flex justify-center space-x-4">
+        <a href="#" class="text-gray-600 hover:text-amber-600">À propos</a>
+        <a href="contact.html" class="text-gray-600 hover:text-amber-600">Contact</a>
+      </div>
     </div>
   </footer>
 

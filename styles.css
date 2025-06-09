@@ -1,331 +1,252 @@
-/* Custom animations */
+/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideUp {
-  from { max-height: 0; opacity: 0; }
-  to { max-height: 120px; opacity: 1; }
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.4s ease-out forwards;
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
-.product-info {
-  animation: slideUp 0.3s ease-out forwards;
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
 }
 
-.toggle-btn, .option-btn {
-  transition: all 0.3s ease;
-  touch-action: manipulation;
-  border: 2px solid #D4A373;
-  border-radius: 12px;
-  background-color: #F5ECE1;
-  font-size: 1rem;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.toggle-btn.selected {
-  background-color: #EAD8D1;
-  border-color: #A67B5B;
-  color: #5A4A42;
-}
-
-.toggle-btn:active, .option-btn:active {
-  transform: scale(0.98);
-  background-image: linear-gradient(rgba(212, 163, 115, 0.2), rgba(212, 163, 115, 0.2));
-}
-
-.product-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #F5ECE1, #EAD8D1);
-  padding: 0.5rem;
-  box-shadow: 0 4px 12px rgba(90, 74, 66, 0.1);
-}
-
-.product-card img {
-  width: 100%;
-  height: 120px; /* Hauteur augmentée pour mobile */
-  object-fit: contain;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-@media (min-width: 640px) {
-  .product-card img {
-    height: 160px; /* Hauteur augmentée pour desktop */
-  }
-  #productGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  nav .container {
-    flex-direction: row;
-  }
-  #navMenu {
-    display: flex;
-  }
-  #menuToggle, #mobileMenu {
-    display: none;
-  }
-  h2 {
-    font-size: 2.5rem;
-  }
-  h1 {
-    font-size: 3rem;
-  }
-}
-
-.aspect-w-3 .aspect-h-2 {
-  position: relative;
-  width: 100%;
-  padding-top: 66.67%; /* 2/3 ratio */
-}
-
-.aspect-w-3 .aspect-h-2 img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.product-info {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  text-align: center;
-  color: #5A4A42;
-  padding: 0 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.product-card.active .product-info {
-  max-height: 120px;
-  padding: 0.75rem 0;
+/* Base Styles */
+body {
+  background-color: #FDF6F0;
+  color: #3F2E2E;
+  font-family: 'Lora', serif;
+  line-height: 1.6;
 }
 
 .font-playfair {
   font-family: 'Playfair Display', serif;
 }
 
-.font-lora {
-  font-family: 'Lora', serif;
+/* Navbar */
+nav {
+  background: linear-gradient(135deg, #FFF5EE, #FFEDE5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+nav a, nav button {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover, nav button:hover {
+  transform: translateY(-1px);
+}
+
+/* Menu Toggle Button */
+#menuToggle {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Product Card */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #FFFFFF;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  text-align: center;
+  color: #3F2E2E;
+  padding: 0 1rem;
+}
+
+.product-card.active .product-info {
+  max-height: 150px;
+  padding: 1rem;
+}
+
+/* Buttons */
+.toggle-btn, .option-btn {
+  transition: all 0.3s ease;
+  border: 2px solid #D4A373;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.toggle-btn:hover, .option-btn:hover {
+  background-color: #FFF5EE;
+  transform: translateY(-1px);
+}
+
+.toggle-btn.selected {
+  background-color: #EAD8D1;
+  border-color: #A67B5B;
+  color: #3F2E2E;
+}
+
+.toggle-btn:active, .option-btn:active {
+  transform: scale(0.98);
+}
+
+/* Form Inputs */
+input, textarea {
+  transition: all 0.3s ease;
+  border: 1px solid #D4D4D4;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+input:focus, textarea:focus {
+  border-color: #D4A373;
+  box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
+}
+
+/* Contact Form Submit Button */
+button[type="submit"] {
+  background-color: #D4A373;
+  color: #FFFFFF;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #A67B5B;
+  transform: translateY(-1px);
 }
 
 /* Dark Theme */
 .dark-theme {
-  background-color: #2D2D36;
-  color: #D3D8E0;
+  background-color: #1A1A22;
+  color: #E5E7EB;
+}
+
+.dark-theme nav {
+  background: #2D2D36 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .dark-theme .bg-amber-50 {
-  background-color: #2D2D36 !important;
+  background-color: #1A1A22 !important;
 }
 
 .dark-theme .bg-rose-50 {
-  background-color: #1F1F29 !important; /* Fond du header */
-}
-
-.dark-theme .bg-amber-100 {
-  background-color: #1F1F29 !important;
-}
-
-.dark-theme .text-gray-800 {
-  color: #D3D8E0 !important;
-}
-
-.dark-theme .text-gray-600 {
-  color: #8A9BA8 !important;
+  background-color: #2D2D36 !important;
 }
 
 .dark-theme .bg-white {
-  background-color: #1F1F29 !important;
+  background-color: #2D2D36 !important;
 }
 
-.dark-theme .bg-gray-200 {
-  background-color: #33333F !important;
+.dark-theme .text-gray-800 {
+  color: #E5E7EB !important;
 }
 
-.dark-theme .text-gray-700 {
-  color: #6B7280 !important;
+.dark-theme .text-gray-600 {
+  color: #9CA3AF !important;
 }
 
-.dark-theme .bg-amber-400 {
-  background-color: #8A9BA8 !important;
+.dark-theme .bg-amber-600 {
+  background-color: #A67B5B !important;
 }
 
-.dark-theme .hover:bg-amber-500 {
-  background-color: #6B7280 !important;
-}
-
-.dark-theme .text-amber-600 {
-  color: #E5EAF2 !important; /* Couleur de la navbar */
-}
-
-.dark-theme #navMenu a,
-.dark-theme #mobileMenu a,
-.dark-theme #themeToggle,
-.dark-theme #mobileThemeToggle {
-  color: #E5EAF2 !important; /* Liens et boutons de la navbar */
-}
-
-.dark-theme #navMenu a:hover,
-.dark-theme #mobileMenu a:hover {
-  color: #B0B7C2 !important; /* Subtile variation au hover */
+.dark-theme .hover:bg-amber-700:hover {
+  background-color: #8A5A44 !important;
 }
 
 .dark-theme .product-card {
-  background: linear-gradient(135deg, #2D2D36, #33333F);
-  box-shadow: 0 4px 12px rgba(45, 45, 54, 0.15);
+  background: #2D2D36;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .dark-theme .product-info {
-  color: #D3D8E0;
+  color: #E5E7EB;
 }
 
 .dark-theme .toggle-btn, .dark-theme .option-btn {
-  background-color: #33333F;
-  border-color: #8A9BA8;
-  color: #D3D8E0;
+  background-color: #3F3F46;
+  border-color: #9CA3AF;
+  color: #E5E7EB;
 }
 
-.dark-theme .toggle-btn.selected, .dark-theme .option-btn.selected {
-  background-color: #4A5568; /* Fond plus contrasté pour les boutons sélectionnés */
-  border-color: #8A9BA8;
-  color: #E5EAF2; /* Texte plus lumineux */
+.dark-theme .toggle-btn.selected {
+  background-color: #4B5563;
+  border-color: #9CA3AF;
 }
 
-/* Ajustements pour les sections dans le thème sombre */
-.dark-theme #products {
-  background-color: #33333F; /* Nos Produits */
-  box-shadow: 0 4px 12px rgba(45, 45, 54, 0.15);
-  color: #D3D8E0;
+.dark-theme input, .dark-theme textarea {
+  background-color: #3F3F46;
+  border-color: #9CA3AF;
+  color: #E5E7EB;
 }
 
-.dark-theme #products h2 {
-  color: #B0B7C2;
-}
-
-.dark-theme #products .text-base,
-.dark-theme #products .text-sm {
-  color: #D3D8E0;
-}
-
-.dark-theme #olfactory-profile,
-.dark-theme #quiz {
-  background-color: #2F2F3C; /* Découvrir Mon Profil Olfactif et Quiz */
-  box-shadow: 0 4px 12px rgba(45, 45, 54, 0.15);
-  color: #D3D8E0;
-}
-
-.dark-theme #olfactory-profile h2,
-.dark-theme #quiz h2 {
-  color: #B0B7C2;
-}
-
-.dark-theme #olfactory-profile .text-base,
-.dark-theme #olfactory-profile .text-sm,
-.dark-theme #quiz .text-base,
-.dark-theme #quiz .text-sm {
-  color: #D3D8E0;
-}
-
-.dark-theme #results {
-  background-color: #363645; /* Résultats en thème sombre */
-  box-shadow: 0 4px 12px rgba(45, 45, 54, 0.15);
-  color: #E5EAF2; /* Texte plus lumineux */
-}
-
-.dark-theme #results h2,
-.dark-theme #results h3 {
-  color: #B0B7C2;
-}
-
-.dark-theme #results .text-base,
-.dark-theme #results .text-sm {
-  color: #E5EAF2;
-}
-
-/* Ajustements pour le thème normal (light theme) */
-#results {
-  background-color: #F9F5F0; /* Fond clair pour les résultats */
-  color: #4A3C3C; /* Texte brun moyen */
-}
-
-#results h2,
-#results h3 {
-  color: #5A4A42; /* Titres légèrement plus foncés */
-}
-
-#results .text-base,
-#results .text-sm {
-  color: #4A3C3C;
-}
-
-.dark-theme .py-6 { /* Contactez-nous */
-  background-color: #3A3A48;
-  box-shadow: 0 4px 12px rgba(45, 45, 54, 0.15);
-  color: #D3D8E0;
-}
-
-.dark-theme .py-6 h2 {
-  color: #B0B7C2;
-}
-
-.dark-theme .py-6 .text-base,
-.dark-theme .py-6 .text-sm {
-  color: #D3D8E0;
-}
-
-.dark-theme .max-w-md {
-  background-color: #2F2F3C;
-  box-shadow: 0 4px 12px rgba(45, 45, 54, 0.15);
-  color: #D3D8E0;
-}
-
-.dark-theme .max-w-md h2 {
-  color: #B0B7C2;
-}
-
-.dark-theme .text-base,
-.dark-theme .text-sm {
-  color: #D3D8E0;
-}
-
-.dark-theme input,
-.dark-theme textarea {
-  background-color: #33333F;
-  border-color: #8A9BA8;
-  color: #D3D8E0;
-}
-
-.dark-theme input::placeholder,
-.dark-theme textarea::placeholder {
+.dark-theme input::placeholder, .dark-theme textarea::placeholder {
   color: #6B7280;
 }
 
 .dark-theme button {
-  background-color: #8A9BA8;
-  color: #2D2D36;
+  background-color: #A67B5B;
+  color: #E5E7EB;
 }
 
 .dark-theme button:hover {
-  background-color: #6B7280;
+  background-color: #8A5A44;
+}
+
+.dark-theme #themeToggle, .dark-theme #mobileThemeToggle {
+  background-color: transparent;
+  border: none;
 }
 
 .dark-theme #progressBar {
-  background-color: #8A9BA8;
+  background-color: #A67B5B;
 }
 
 .dark-theme #menuToggle {
   background-color: transparent;
   border: none;
-  padding: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  #productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  #productGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
