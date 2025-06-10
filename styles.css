@@ -271,7 +271,26 @@ nav a:hover, nav button:hover {
 
 .quiz-navigation button:disabled {
   background-color: #E5E7EB;
+  color: #6B7280;
   cursor: not-allowed;
+}
+
+.quiz-navigation .bg-amber-600 {
+  background-color: #D4A373;
+  color: #FFFFFF;
+}
+
+.quiz-navigation .bg-amber-600:hover {
+  background-color: #A67B5B;
+}
+
+.quiz-navigation .bg-gray-500 {
+  background-color: #6B7280;
+  color: #FFFFFF;
+}
+
+.quiz-navigation .bg-gray-500:hover {
+  background-color: #4B5563;
 }
 
 .chart-container {
@@ -433,6 +452,10 @@ button[type="submit"]:hover {
   background-color: #2D2D36;
 }
 
+.dark-theme .chart-container canvas {
+  background-color: #2D2D36;
+}
+
 .dark-theme .perfume-item {
   background-color: #3F3F46;
   color: #E5E7EB;
@@ -482,6 +505,22 @@ button[type="submit"]:hover {
 .dark-theme #menuToggle {
   background-color: transparent;
   border: none;
+}
+
+.dark-theme .quiz-navigation .bg-amber-600 {
+  background-color: #A67B5B;
+}
+
+.dark-theme .quiz-navigation .bg-amber-600:hover {
+  background-color: #8A5A44;
+}
+
+.dark-theme .quiz-navigation .bg-gray-500 {
+  background-color: #6B7280;
+}
+
+.dark-theme .quiz-navigation .bg-gray-500:hover {
+  background-color: #4B5563;
 }
 
 /* Responsive Design */
